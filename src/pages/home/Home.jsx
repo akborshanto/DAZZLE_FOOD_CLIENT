@@ -1,12 +1,19 @@
 import React, { useContext } from 'react'
 import { AuthContextValue } from '../../firebase/authProvider/AuthProvider'
+import Banner from './banner/Banner'
+import FeatureFood from './featureFood/FeatureFood'
 
 const Home = () => {
-  const {user}=useContext(AuthContextValue)
-  console.log(user)
+
+
   return (
     <div>
-      {user}
+  <Banner></Banner>
+  {/* feature food */}
+  <FeatureFood></FeatureFood>
+
+
+  { /* add to extra section this section will be attractive and striking aswell as winsome */}
     </div>
   )
 }

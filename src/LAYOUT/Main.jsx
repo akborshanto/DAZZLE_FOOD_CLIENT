@@ -5,7 +5,7 @@ import Navbar from '../shared/navbar/Navbar'
 
 const Main = () => {
   return (
-    <div>
+    <div className='container mx-auto'>
       
 <Navbar></Navbar>
     <Outlet></Outlet>
