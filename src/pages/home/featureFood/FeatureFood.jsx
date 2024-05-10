@@ -1,10 +1,47 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import FeatureCard from './FeatureCard'
+import useAuthHook from './../../../firebase/authProvider/AuthHook';
 
 const FeatureFood = () => {
+const [feature,setFeature]=useState([])
+const {loading,setLoading}=useAuthHook()
+/* feature useEffect data fetching with axios */
+useEffect(()=>{
+/* axios */
+
+const getdata=async ()=>{
+setLoading(true)
+const data=await axios.get(`${import.meta.env.VITE_API_URL}/feature`)
+setFeature(data.data)
+setLoading(false)
+}
+
+getdata()
+},[])
+
+
   return (
-    <div>
-      FETUURE FOOD
-    </div>
+<>
+{
+  loading ? <h1 className='text-8xl  text-red-500'>LOADING.........</h1>:    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8  justify-items-center'>
+
+  {
+  
+  feature.slice(0,6).map(singFeature=><FeatureCard key={Math.random()} singFeature={singFeature}></FeatureCard>)
+  
+  
+  }
+  
+  
+      </div>
+}
+
+
+
+</>
+
+
   )
 }
 

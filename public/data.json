@@ -1,143 +1,86 @@
 [
-    {
-      "foodId": "1",
-      "foodName": "Pasta",
-      "foodImage": "pasta.jpg",
-      "foodQuantity": "2 servings",
-      "expiredDateTime": "2024-05-15T12:00:00",
-      "requestButton": "Request",
-      "modalInputs": {
-        "foodName": "Pasta",
-        "foodImage": "pasta.jpg",
-        "foodId": "1",
-        "foodDonatorEmail": "example1@example.com",
-        "foodDonatorName": "John Doe",
-        "userEmail": "user@example.com",
-        "requestDate": "2024-05-09T08:00:00",
-        "pickupLocation": "123 Main St, City, Country",
-        "expireDate": "2024-05-15T12:00:00",
-        "additionalNotes": ""
-      }
-    },
-    {
-      "foodId": "2",
-      "foodName": "Salad",
-      "foodImage": "salad.jpg",
-      "foodQuantity": "1 bowl",
-      "expiredDateTime": "2024-05-12T18:00:00",
-      "requestButton": "Request",
-      "modalInputs": {
-        "foodName": "Salad",
-        "foodImage": "salad.jpg",
-        "foodId": "2",
-        "foodDonatorEmail": "example2@example.com",
-        "foodDonatorName": "Jane Smith",
-        "userEmail": "user@example.com",
-        "requestDate": "2024-05-09T08:00:00",
-        "pickupLocation": "456 Elm St, City, Country",
-        "expireDate": "2024-05-12T18:00:00",
-        "additionalNotes": ""
-      }
-    },
-    {
-      "foodId": "3",
-      "foodName": "Pizza",
-      "foodImage": "pizza.jpg",
-      "foodQuantity": "1 whole pizza",
-      "expiredDateTime": "2024-05-17T20:00:00",
-      "requestButton": "Request",
-      "modalInputs": {
-        "foodName": "Pizza",
-        "foodImage": "pizza.jpg",
-        "foodId": "3",
-        "foodDonatorEmail": "example3@example.com",
-        "foodDonatorName": "Emily Johnson",
-        "userEmail": "user@example.com",
-        "requestDate": "2024-05-09T08:00:00",
-        "pickupLocation": "789 Oak St, City, Country",
-        "expireDate": "2024-05-17T20:00:00",
-        "additionalNotes": ""
-      }
-    },
-    {
-      "foodId": "4",
-      "foodName": "Burger",
-      "foodImage": "burger.jpg",
-      "foodQuantity": "1 burger",
-      "expiredDateTime": "2024-05-11T14:00:00",
-      "requestButton": "Request",
-      "modalInputs": {
-        "foodName": "Burger",
-        "foodImage": "burger.jpg",
-        "foodId": "4",
-        "foodDonatorEmail": "example4@example.com",
-        "foodDonatorName": "Michael Brown",
-        "userEmail": "user@example.com",
-        "requestDate": "2024-05-09T08:00:00",
-        "pickupLocation": "101 Pine St, City, Country",
-        "expireDate": "2024-05-11T14:00:00",
-        "additionalNotes": ""
-      }
-    },
-    {
-      "foodId": "5",
-      "foodName": "Sushi",
-      "foodImage": "sushi.jpg",
-      "foodQuantity": "8 pieces",
-      "expiredDateTime": "2024-05-14T19:00:00",
-      "requestButton": "Request",
-      "modalInputs": {
-        "foodName": "Sushi",
-        "foodImage": "sushi.jpg",
-        "foodId": "5",
-        "foodDonatorEmail": "example5@example.com",
-        "foodDonatorName": "Sarah Lee",
-        "userEmail": "user@example.com",
-        "requestDate": "2024-05-09T08:00:00",
-        "pickupLocation": "202 Maple St, City, Country",
-        "expireDate": "2024-05-14T19:00:00",
-        "additionalNotes": ""
-      }
-    },
-    {
-      "foodId": "6",
-      "foodName": "Fried Chicken",
-      "foodImage": "fried_chicken.jpg",
-      "foodQuantity": "4 pieces",
-      "expiredDateTime": "2024-05-16T17:00:00",
-      "requestButton": "Request",
-      "modalInputs": {
-        "foodName": "Fried Chicken",
-        "foodImage": "fried_chicken.jpg",
-        "foodId": "6",
-        "foodDonatorEmail": "example6@example.com",
-        "foodDonatorName": "David Smith",
-        "userEmail": "user@example.com",
-        "requestDate": "2024-05-09T08:00:00",
-        "pickupLocation": "303 Cedar St, City, Country",
-        "expireDate": "2024-05-16T17:00:00",
-        "additionalNotes": ""
-      }
-    },
-    {
-      "foodId": "7",
-      "foodName": "Fruit Salad",
-      "foodImage": "fruit_salad.jpg",
-      "foodQuantity": "1 bowl",
-      "expiredDateTime": "2024-05-13T11:00:00",
-      "requestButton": "Request",
-      "modalInputs": {
-        "foodName": "Fruit Salad",
-        "foodImage": "fruit_salad.jpg",
-        "foodId": "7",
-        "foodDonatorEmail": "example7@example.com",
-        "foodDonatorName": "Lisa Johnson",
-        "userEmail": "user@example.com",
-        "requestDate": "2024-05-09T08:00:00",
-        "pickupLocation": "404 Walnut St, City, Country",
-        "expireDate": "2024-05-13T11:00:00",
-        "additionalNotes": ""
-      }
-    }
-    
-    ]
+  {
+
+    "foodName": "Apple",
+    "foodImage": "https://img.freepik.com/free-photo/top-view-apples-green-red-gray-wooden-horizontal_176474-1136.jpg?t=st=1715281558~exp=1715285158~hmac=7ac06fc9c4bf4a39449e0774a65a18dd89cf6d70b3a438cfc8e3665a987191bd&w=826",
+    "foodQuantity": "5",
+    "expiredDateTime": "2024-05-15T12:00:00Z",
+    "foodDonatorEmail": "donator1@example.com",
+    "foodDonatorName": "John Doe",
+    "userEmail": "user@example.com",
+    "requestDate": "2024-05-09T10:30:00Z",
+    "pickupLocation": "123 Main St, City",
+    "expireDate": "2024-05-15",
+    "additionalNotes": "Organic apples"
+  },
+  {
+
+    "foodName": "Banana",
+    "foodImage": "https://img.freepik.com/free-photo/close-up-bananas-with-tomatoes_23-2151005974.jpg?t=st=1715281501~exp=1715285101~hmac=dd77c12b783ee23d8e43235683e483aa45081f59ef0dac71c7d2838002cb56d8&w=900",
+    "foodQuantity": "3",
+    "expiredDateTime": "2024-05-12T12:00:00Z",
+    "foodDonatorEmail": "donator2@example.com",
+    "foodDonatorName": "Jane Smith",
+    "userEmail": "user@example.com",
+    "requestDate": "2024-05-09T11:00:00Z",
+    "pickupLocation": "456 Elm St, Town",
+    "expireDate": "2024-05-12",
+    "additionalNotes": "Ripe bananas"
+  },
+  {
+
+    "foodName": "Carrot",
+    "foodImage": "https://img.freepik.com/free-photo/oval-bowl-mixed-vegetable-salad-displayed-marble-surface_114579-50018.jpg?t=st=1715281435~exp=1715285035~hmac=bab6178f59e155451a5057683f0663b59817236e0c9cf9b4e1d432f439d7a826&w=900",
+    "foodQuantity": "10",
+    "expiredDateTime": "2024-05-10T12:00:00Z",
+    "foodDonatorEmail": "donator3@example.com",
+    "foodDonatorName": "Alice Johnson",
+    "userEmail": "user@example.com",
+    "requestDate": "2024-05-09T12:00:00Z",
+    "pickupLocation": "789 Oak St, Village",
+    "expireDate": "2024-05-10",
+    "additionalNotes": "Fresh organic carrots"
+  },
+  {
+
+    "foodName": "Pizza",
+    "foodImage": "https://img.freepik.com/free-photo/top-view-pepperoni-pizza-with-mushroom-sausages-bell-pepper-olive-corn-black-wooden_141793-2158.jpg?t=st=1715281629~exp=1715285229~hmac=de59eb8c84640df09ce81adc194101cb43aa5d1e7bc9533c48f5b93fb1a57012&w=900",
+    "foodQuantity": "2",
+    "expiredDateTime": "2024-05-11T12:00:00Z",
+    "foodDonatorEmail": "donator4@example.com",
+    "foodDonatorName": "Mark Thompson",
+    "userEmail": "user@example.com",
+    "requestDate": "2024-05-09T13:00:00Z",
+    "pickupLocation": "101 Pine St, Hamlet",
+    "expireDate": "2024-05-11",
+    "additionalNotes": "Vegetarian pizza"
+  },
+  {
+
+    "foodName": "Salad",
+    "foodImage": "https://img.freepik.com/free-photo/top-view-homemade-delicious-salad-with-many-ingredients-plate-black-green-mix-colors-background_179666-20005.jpg?t=st=1715279520~exp=1715283120~hmac=83b52ae0f319de7bd2e51c7a0d0f54380784058cb0e86b4c7e0571a9e71ff3d3&w=900",
+    "foodQuantity": "1",
+    "expiredDateTime": "2024-05-13T12:00:00Z",
+    "foodDonatorEmail": "donator5@example.com",
+    "foodDonatorName": "Emily Brown",
+    "userEmail": "user@example.com",
+    "requestDate": "2024-05-09T14:00:00Z",
+    "pickupLocation": "202 Maple St, Borough",
+    "expireDate": "2024-05-13",
+    "additionalNotes": "Fresh garden salad"
+  },
+  {
+
+    "foodName": "Soup",
+    "foodImage": "https://img.freepik.com/free-photo/bowl-delicious-pumpkin-soup-with-seeds_114579-29937.jpg?t=st=1715281703~exp=1715285303~hmac=714a9f617708a92a77affb265bcb0eb3cdd80e71d0adfcb091a756455ed51a46&w=900",
+    "foodQuantity": "4",
+    "expiredDateTime": "2024-05-14T12:00:00Z",
+    "foodDonatorEmail": "donator6@example.com",
+    "foodDonatorName": "Chris Wilson",
+    "userEmail": "user@example.com",
+    "requestDate": "2024-05-09T15:00:00Z",
+    "pickupLocation": "303 Cedar St, District",
+    "expireDate": "2024-05-14",
+    "additionalNotes": "Homemade chicken noodle soup"
+  }
+]

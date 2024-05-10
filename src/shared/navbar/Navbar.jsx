@@ -1,11 +1,25 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { Fragment } from "react";
+import { Link, NavLink } from "react-router-dom";
+import useAuthHook from "../../firebase/authProvider/AuthHook";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const { user, logOut } = useAuthHook();
+console.log(user)
+  /* logout */
+  const handleLogOut = () => {
+    logOut()
+      .then((res) => {
+        toast.success("Successfully logged out");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   /* links */
 
-  const links = 
-    <>
+  const links = (
+    <Fragment>
       <li>
         <NavLink to="/">HOME</NavLink>
       </li>
@@ -24,9 +38,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/myFoodRequest">My Food Request</NavLink>
       </li>
+    </Fragment>
+  );
 
-    </>
-  
   return (
     <div className="navbar bg-gray-400">
       <div className="navbar-start">
@@ -60,12 +74,26 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-      <div className="avatar">
-  <div className="w-10 rounded-full">
-    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-  </div>
-</div>
-        <a className="btn">LOGIN</a>
+    {
+      user ?    <div className="avatar">
+      <div className="w-10 rounded-full">
+        <img src={user?.photoURL} referrerPolicy="no-referrer" title={user?.email} />
+        <p>{user?.email}</p>
+      </div>
+    </div>:""
+    }
+
+        {user ? (
+          <Link to="/login">
+            <a className="btn btn-warning" onClick={handleLogOut}>
+              LOGOUT
+            </a>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <a className="btn">LOGIN</a>
+          </Link>
+        )}
       </div>
     </div>
   );
