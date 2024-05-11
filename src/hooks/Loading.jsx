@@ -1,12 +1,12 @@
 import React from 'react'
-
+import './loading/loading.css'
 const Loading = () => {
 
 
   return (
-    <div>
-      
-    </div>
+    <div class="loader">
+    <span></span>
+</div>
   )
 }
 

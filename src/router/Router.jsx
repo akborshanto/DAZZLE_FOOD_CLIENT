@@ -31,7 +31,10 @@ export const router = createBrowserRouter([
 
 
 
-      {path:'/viewDetail',element:<PrivateRoute><ViewDetail></ViewDetail></PrivateRoute>},
+      {path:'/viewDetail/:id',element:<PrivateRoute><ViewDetail></ViewDetail></PrivateRoute>,
+loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/singleFeature/${params.id}`)
+
+      },
 {path:'/addFood',element:<PrivateRoute><AddFood></AddFood></PrivateRoute>},
       {path:'/manageMyFood',element:<PrivateRoute><ManageMyFood></ManageMyFood></PrivateRoute>},
       {path:'/myFoodRequest',element:<PrivateRoute><MyFoodRequest></MyFoodRequest></PrivateRoute>},
