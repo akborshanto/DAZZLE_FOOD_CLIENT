@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-const Banner = () => {
+const Slider = () => {
   return (
     <div>
     <div
-    className='w-full bg-center bg-cover h-[38rem] my-12'
+    className='w-full bg-center bg-cover h-[38rem]'
     style={{
       backgroundImage: `url("https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80")`,
     }}
@@ -16,11 +15,9 @@ const Banner = () => {
           Build your new <span class='text-blue-400'>Saas</span> Project
         </h1>
         <br />
-        <Link to="/quaries">
-        <button class="cursor-pointer uppercase bg-white font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black">
-        ALL   QUARIES
+        <button className=' btn btn-warning w-full px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-gray-600 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500'>
+          Post Job & Hire Expert
         </button>
-      </Link>
       </div>
     </div>
   </div>
@@ -28,4 +25,4 @@ const Banner = () => {
   )
 }
 
-export default Banner
+export default Slider

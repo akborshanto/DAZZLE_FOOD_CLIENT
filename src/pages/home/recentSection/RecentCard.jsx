@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const FeatureCard = ({ singFeature }) => {
+const RecentCard = ({ singFeature }) => {
   const {
     _id,
     foodImage,
@@ -24,15 +24,28 @@ const FeatureCard = ({ singFeature }) => {
      src={foodImage}
    />
    <div class="p-4">
-     <h2 class="text-xl  font-semibold">FoodName:{foodName}</h2>
-     <p class="text-gray-600">DonatorName:{foodDonatorName}</p>
-     <p class="text-gray-600">Quantity:{foodQuantity}</p>
-     <p class="text-gray-600">Expire Date:{expireDate}</p>
-     <p class="text-gray-600">pickupLocation:{pickupLocation}</p>
+     <h2 class="text-xl  font-semibold">ProductName:{foodName}</h2>
+     <p class="text-gray-600">Query Title:{foodDonatorName}</p>
+     <p class="text-gray-600">BrandName:{foodQuantity}</p>
+     <p class="text-gray-600">Date Posted:{expireDate}</p>
+     <p class="text-gray-600">AlterNation Reason:{pickupLocation}</p>
      <p class="text-gray-600">AdditionalNote:{additionalNotes}</p>
-
+{/* user information {name,image as thumbnail} */}
      <div class="flex justify-between items-center mt-4">
-       <Link>
+
+
+<h1 className="bg-red-400">USER THUBMNAIL</h1>
+
+
+
+
+
+
+
+
+
+
+      {/*  <Link>
          {" "}
          <Link to={`/viewDetail/${_id}`}>
            {" "}
@@ -46,7 +59,7 @@ const FeatureCard = ({ singFeature }) => {
          <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400">
            SHOW ALL
          </button>
-       </Link>
+       </Link> */}
      </div>
    </div>
  </div>
@@ -55,4 +68,4 @@ const FeatureCard = ({ singFeature }) => {
   );
 };
 
-export default FeatureCard;
+export default RecentCard;

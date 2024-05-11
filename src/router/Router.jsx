@@ -2,15 +2,17 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "./../LAYOUT/Main";
 import Errors from "../pages/error/Error";
 import Home from "../pages/home/Home";
-import AvailableFood from './../pages/available-food/AvailableFood';
 
-import ManageMyFood from './../pages/manageMyFood/ManageMyFood';
-import MyFoodRequest from './../pages/myFoodRequest/MyFoodRequest';
-import AddFood from './../pages/addFood/AddFood';
+import ManageMyFood from '../pages/myReqoomendation/myReqomendation';
+import MyFoodRequest from '../pages/myQuaries/MyQuearies';
+import myReqomendation from './../pages/myReqoomendation/myReqomendation';
 import Login from "../pages/login/Login";
 import Register from './../pages/register/Register';
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import ViewDetail from "../pages/home/featureViewDetail/ViewDetail";
+import Quaries from "../pages/quaries/Quaries";
+import ReqomendationForMe from "../pages/reqomendationForMe/ReqomendationForMe";
+import MyQuearies from "../pages/myQuaries/MyQuearies";
 
 export const router = createBrowserRouter([
   {
@@ -21,7 +23,7 @@ export const router = createBrowserRouter([
     children: [
       //home
       { index: true, element: <Home></Home> },
-      {path:'/available_food',element:<AvailableFood></AvailableFood>},
+      {path:'/quaries',element:<Quaries></Quaries>},
 /* loging  & register */
 
 {path:'/login',element:<Login></Login>},
@@ -34,10 +36,14 @@ export const router = createBrowserRouter([
       {path:'/viewDetail/:id',element:<PrivateRoute><ViewDetail></ViewDetail></PrivateRoute>,
 loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/singleFeature/${params.id}`)
 
+
       },
-{path:'/addFood',element:<PrivateRoute><AddFood></AddFood></PrivateRoute>},
-      {path:'/manageMyFood',element:<PrivateRoute><ManageMyFood></ManageMyFood></PrivateRoute>},
-      {path:'/myFoodRequest',element:<PrivateRoute><MyFoodRequest></MyFoodRequest></PrivateRoute>},
+{path:'/recomendationForMe',element:<PrivateRoute><ReqomendationForMe></ReqomendationForMe></PrivateRoute>},
+      {path:'/myReqomendation',element:<PrivateRoute><myReqomendation></myReqomendation></PrivateRoute>},
+
+
+      /* add my quariestry for this private route deleted */
+      {path:'/myquary',element:<MyQuearies></MyQuearies>},
     ],
   },
 ]);

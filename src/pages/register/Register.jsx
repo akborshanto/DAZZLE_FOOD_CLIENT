@@ -77,7 +77,7 @@ const Register = () => {
                 </p>
               </div>
 
-              <form class="mt-8" onSubmit={handleRegister}>
+              <form class="mt-8" >
                 <div class="space-y-5">
                   <div>
                     <label for="" class="text-base font-medium text-gray-900">

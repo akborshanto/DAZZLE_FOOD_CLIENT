@@ -1,10 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import FeatureCard from './FeatureCard'
-import useAuthHook from './../../../firebase/authProvider/AuthHook';
+//import FeatureCard from './RecentCard'
+import useAuthHook from '../../../firebase/authProvider/AuthHook';
 import Loading from '../../../hooks/Loading';
+import RecentCard from './RecentCard';
 
-const FeatureFood = () => {
+const Recents = () => {
 const [feature,setFeature]=useState([])
 const {loading,setLoading}=useAuthHook()
 /* feature useEffect data fetching with axios */
@@ -13,7 +14,8 @@ useEffect(()=>{
 
 const getdata=async ()=>{
 setLoading(true)
-const data=await axios.get(`${import.meta.env.VITE_API_URL}/feature`)
+//const data=await axios.get(`${import.meta.env.VITE_API_URL}/feature`)
+const data=await axios.get('data.json')
 setFeature(data.data)
 setLoading(false)
 }
@@ -29,8 +31,7 @@ getdata()
 
   {
   
-  feature.slice(0,6).map(singFeature=><FeatureCard key={Math.random()} singFeature={singFeature}></FeatureCard>)
-  
+  feature.slice(0,6).map(singFeature=><RecentCard key={Math.random()} singFeature={singFeature}></RecentCard>)
   
   }
   
@@ -46,4 +47,4 @@ getdata()
   )
 }
 
-export default FeatureFood
+export default Recents

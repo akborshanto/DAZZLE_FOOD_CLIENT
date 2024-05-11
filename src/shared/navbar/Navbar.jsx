@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, logOut } = useAuthHook();
-console.log(user)
+  console.log(user);
   /* logout */
   const handleLogOut = () => {
     logOut()
@@ -24,20 +24,30 @@ console.log(user)
         <NavLink to="/">HOME</NavLink>
       </li>
       <li>
-        <NavLink to="/available_food">Available Foods</NavLink>
+        <NavLink to="/quaries">Quaries</NavLink>
       </li>
+
+      {user && (
+        <li>
+          <NavLink to="/recomendationForMe">Recommendations For Me</NavLink>
+        </li>
+      )}
 
       {/* priveate route */}
-      <li>
-        <NavLink to="/addFood">Add Food</NavLink>
-      </li>
-      <li>
-        <NavLink to="/manageMyFood">Manage My Foods</NavLink>
-      </li>
 
+{/*     {user && (
       <li>
-        <NavLink to="/myFoodRequest">My Food Request</NavLink>
+        <NavLink to="/myquary">My Queries</NavLink>
       </li>
+    )} */}
+    <li>
+        <NavLink to="/myquary">My Queries</NavLink>
+      </li>
+      {user && (
+        <li>
+          <NavLink to="/myReqomendation">My recommendations</NavLink>
+        </li>
+      )}
     </Fragment>
   );
 
@@ -74,24 +84,35 @@ console.log(user)
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-    {
-      user ?    <div className="avatar">
-      <div className="w-10 rounded-full">
-        <img src={user?.photoURL} referrerPolicy="no-referrer" title={user?.email} />
-        <p>{user?.email}</p>
-      </div>
-    </div>:""
-    }
+        {user ? (
+          <div className="avatar">
+            <div className="w-10 rounded-full">
+              <img
+                src={user?.photoURL}
+                referrerPolicy="no-referrer"
+                title={user?.email}
+              />
+              <p>{user?.email}</p>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
 
         {user ? (
           <Link to="/login">
-            <a className="btn btn-warning" onClick={handleLogOut}>
+            <button
+              onClick={handleLogOut}
+              class="cursor-pointer uppercase bg-white font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black"
+            >
               LOGOUT
-            </a>
+            </button>
           </Link>
         ) : (
           <Link to="/login">
-            <a className="btn">LOGIN</a>
+            <button class="cursor-pointer uppercase bg-white font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black">
+              LOGIN
+            </button>
           </Link>
         )}
       </div>

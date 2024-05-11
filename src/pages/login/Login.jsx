@@ -35,6 +35,7 @@ const location=useLocation()
       })
       .catch((err) => {
         console.log(err.message);
+     
       });
 
 
