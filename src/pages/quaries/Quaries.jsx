@@ -21,6 +21,8 @@ getData()
 },[])
 
 
+
+/* i will show the interrogatory data with 3 column */
   return (
     <>
     {
@@ -28,7 +30,7 @@ getData()
     
       {
       
-      quaries.map(singFeature=><QuariesCard key={Math.random()} singFeature={singFeature}></QuariesCard>)
+      quaries.map(interrogatory=><QuariesCard key={Math.random()} interrogatory={interrogatory}></QuariesCard>)
       
       }
       

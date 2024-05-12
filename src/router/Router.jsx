@@ -14,6 +14,7 @@ import Quaries from "../pages/quaries/Quaries";
 import ReqomendationForMe from "../pages/reqomendationForMe/ReqomendationForMe";
 import MyQuearies from "../pages/myQuaries/MyQuearies";
 import AddMyQuaris from "../pages/myQuaries/addMyQuaries/AddMyQuaris";
+import QueryDetail from "../pages/queryDetail/QueryDetail";
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +40,17 @@ loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/singleFeature/${params
 
 
       },
+/* query detail */
+{
+path:'/queryDetail/:id',
+element:<QueryDetail></QueryDetail>,
+loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/QueryDetail/${params.id}`)
+
+
+
+},
+
+
 {path:'/recomendationForMe',element:<PrivateRoute><ReqomendationForMe></ReqomendationForMe></PrivateRoute>},
       {path:'/myReqomendation',element:<PrivateRoute><myReqomendation></myReqomendation></PrivateRoute>},
 

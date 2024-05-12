@@ -25,7 +25,7 @@ console.table(singleFeatur)
         <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
           <div className="lg:col-start-2">
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl font-lato">DONAR_NAME: {foodDonatorName}</h1>
-            <p className="mt-3 text-lg dark:text-gray-600">FOOD_FIKER_LOCATION:{pickupLocation}</p>
+            <p className="mt-3 text-lg dark:text-gray-600">FOOD_FIKER_LOC{pickupLocation}</p>
             <div className="mt-12 space-y-12">
               <div className="flex">
                 <div className="flex-shrink-0">
