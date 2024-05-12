@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import useAuthHook from '../../firebase/authProvider/AuthHook';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const MyRecomendation = () => {
 const {user}=useAuthHook()
@@ -16,57 +17,87 @@ setMyReco(data)
 }
 
 getData()
-},[])
-
-/* delete a specifinq fetchin */
-const handleDeleteReco=(id)=>{
-
-  fetch(`${import.meta.env.VITE_API_URL}/specifiqRecoDelete/${id}`,{
+},[myReco])
 
 
-    method:"DELETE",
+/* axios user get  data */
+const getData=async ()=>{
+const {data}=await axios.get(`${import.meta.env.VITE_API_URL}/specifiqReco/${user.email}`)
+setMyReco(data)
 
-  })
-  .then(res=>res.json())
-  .then(data=>{
-
-//deleteed from ui
-if(data.deletedCount >0){
-
-const remaining=myReco.filter(D_UI=>{
-
-  D_UI._id !==id
-
-})
-setMyReco(remaining)
+}
 
 
- 
+/* hadnle Delete button */
+const handleDeleteReco=async(id)=>{
+
+try{
+
+const {data}=await axios.delete(`${import.meta.env.VITE_API_URL}/specifiqRecoDelete/${id}`)
+toast.success("SUCCEFULLY DELETED")
+
+
+}catch(err){
+  console.log(err)
+}
+
+
+
 }
 
 
 
 
-  })
-  
+/* delete a specifinq fetchin  noremal fetchin ML%^*/
+// const handleDeleteReco=(id)=>{
+
+//   fetch(`${import.meta.env.VITE_API_URL}/specifiqRecoDelete/${id}`,{
 
 
-// try{
+//     method:"DELETE",
 
-// const {data}=await axios.delete(`${import.meta.env.VITE_API_URL}/specifiqRecoDelete/${id}`)
+//   })
+//   .then(res=>res.json())
+//   .then(data=>{
 
-// console.log(data)
+// //deleteed from ui
+// if(data.deletedCount >0){
+
+// const remaining=myReco.filter(D_UI=>{
+
+//   D_UI._id !==id
+
+// })
+// toast.success("succesffully Delete4d")
+// setMyReco(remaining)
 
 
-// }catch(err){
-//   console.log('thii i ai err')
+ 
 // }
 
 
 
 
-//   console.log(id)
-}
+//   })
+  
+
+
+// // try{
+
+// // const {data}=await axios.delete(`${import.meta.env.VITE_API_URL}/specifiqRecoDelete/${id}`)
+
+// // console.log(data)
+
+
+// // }catch(err){
+// //   console.log('thii i ai err')
+// // }
+
+
+
+
+// //   console.log(id)
+// }
 
   return (
     <div>
