@@ -1,6 +1,23 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 
 const ReqomendationForMe = () => {
+const[recoForme,setRecoForMe]=useState([])
+
+useEffect(()=>{
+const getData=async ()=>{
+
+const {data}=await axios.get(`${import.meta.env.VITE_API_URL}/recoData`)
+setRecoForMe(data)
+
+}
+  getData()
+},[])
+
+
+
+console.log(recoForme)
+
   return (
     <div>
 {/*     <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 bg-white text-gray-400">
@@ -132,8 +149,94 @@ const ReqomendationForMe = () => {
       </div>
     </div>
    */}
+   <div className="overflow-x-auto">
+   <table className="table">
+     {/* head */}
+     <thead>
+       <tr>
+         <th>
+ 
+         </th>
+         <th>RECOMENDER_INFORMATION</th>
+         <th></th>
+         <th>ECOMENDER_TITLE</th>
+         <th>ECOMENDER_REASON</th>
+       </tr>
+     </thead>
+     <tbody>
+
+     {
+       recoForme.map(specifiqUser=>
+         
+
+(
+
+           <tr>
+           <th>
+            
+           </th>
+           <td>
+             <div className="flex items-center gap-3">
+               <div className="avatar">
+                 <div className="mask mask-squircle w-12 h-12">
+                   <img src={specifiqUser.R_PdPhoto} alt="Avatar Tailwind CSS Component" />
+                 </div>
+               </div>
+               <div>
+                 <div className="font-bold">{specifiqUser.pd_Name}</div>
+                 <div className="text-sm opacity-50">{specifiqUser.R_title}</div>
+               </div>
+             </div>
+           </td>
+           <td>
+          {specifiqUser.current_Name}
+             <br/>
+             <span className="badge badge-ghost badge-sm">{specifiqUser.curren_Email}</span>
+           </td>
+           <td>{specifiqUser.R_title}</td>
+
+           
+           <td>{specifiqUser.R_reason}</td>
+
+
+           <th>
+    
+         
+           </th>
+         </tr>
+        
+ 
+ 
+         )
+
+       
+  
+  
+
+
+
+       
+
+         
+
+       )
+     }
+
+
+
+
+
+       {/* row 1 */}
    
-   REQOMENDATION FOR  ME
+     </tbody>
+     {/* foot */}
+     <tfoot>
+     
+     </tfoot>
+     
+   </table>
+ </div>
+
     </div>
   )
 }
