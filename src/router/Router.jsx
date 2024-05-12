@@ -3,9 +3,8 @@ import Main from "./../LAYOUT/Main";
 import Errors from "../pages/error/Error";
 import Home from "../pages/home/Home";
 
-import ManageMyFood from '../pages/myReqoomendation/myReqomendation';
+import ManageMyFood from '../pages/myReqoomendation/MyRecomendation';
 import MyFoodRequest from '../pages/myQuaries/MyQuearies';
-import myReqomendation from './../pages/myReqoomendation/myReqomendation';
 import Login from "../pages/login/Login";
 import Register from './../pages/register/Register';
 import PrivateRoute from "../privateRoute/PrivateRoute";
@@ -15,6 +14,7 @@ import ReqomendationForMe from "../pages/reqomendationForMe/ReqomendationForMe";
 import MyQuearies from "../pages/myQuaries/MyQuearies";
 import AddMyQuaris from "../pages/myQuaries/addMyQuaries/AddMyQuaris";
 import QueryDetail from "../pages/queryDetail/QueryDetail";
+import MyRecomendation from "../pages/myReqoomendation/MyRecomendation";
 
 export const router = createBrowserRouter([
   {
@@ -43,7 +43,7 @@ loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/singleFeature/${params
 /* query detail */
 {
 path:'/queryDetail/:id',
-element:<QueryDetail></QueryDetail>,
+element:<PrivateRoute><QueryDetail></QueryDetail></PrivateRoute>,
 loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/QueryDetail/${params.id}`)
 
 
@@ -52,7 +52,12 @@ loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/QueryDetail/${params.i
 
 
 {path:'/recomendationForMe',element:<PrivateRoute><ReqomendationForMe></ReqomendationForMe></PrivateRoute>},
-      {path:'/myReqomendation',element:<PrivateRoute><myReqomendation></myReqomendation></PrivateRoute>},
+      {path:'/myReqomendation',element:<PrivateRoute><MyRecomendation></MyRecomendation></PrivateRoute>
+
+
+
+
+ },
 
 
       /* add my quariestry for this private route deleted */
