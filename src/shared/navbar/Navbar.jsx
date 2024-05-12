@@ -35,14 +35,12 @@ const Navbar = () => {
 
       {/* priveate route */}
 
-{/*     {user && (
+    {user && (
       <li>
         <NavLink to="/myquary">My Queries</NavLink>
       </li>
-    )} */}
-    <li>
-        <NavLink to="/myquary">My Queries</NavLink>
-      </li>
+    )} 
+
       {user && (
         <li>
           <NavLink to="/myReqomendation">My recommendations</NavLink>

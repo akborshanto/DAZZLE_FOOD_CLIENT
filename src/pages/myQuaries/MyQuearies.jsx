@@ -1,10 +1,12 @@
 import React from 'react'
-import AddMyQuaris from './addMyQuaries/AddMyQuaris'
+import MyQuariesBanner from './myQuariesBanner/MyQuariesBanner'
 
 const MyQuearies = () => {
   return (
     <div>
-<AddMyQuaris></AddMyQuaris>
+
+
+    <MyQuariesBanner></MyQuariesBanner>
     </div>
   )
 }

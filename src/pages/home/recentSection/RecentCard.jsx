@@ -3,13 +3,17 @@ import { Link } from "react-router-dom";
 const RecentCard = ({ singFeature }) => {
   const {
     _id,
-    foodImage,
-    foodDonatorName,
-    foodQuantity,
-    expireDate,
-    additionalNotes,
-    foodName,
-    pickupLocation,
+    pdBrand,
+    pdName,
+    pdPhoto,
+    quaryTitle,
+    boycotReasonDetail,
+    userEmail,
+    userName,
+    userImage,
+    currentTime,
+    recomendateCount,
+    /* alter nation count problem */
   } = singFeature;
 
   return (
@@ -20,21 +24,26 @@ const RecentCard = ({ singFeature }) => {
    <div class="w-80 p-4 bg-white rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 ease-in-out">
    <img
      class="w-full h-40 object-cover rounded-t-lg"
-     alt={foodName}
-     src={foodImage}
+     alt={pdName}
+     src={pdPhoto}
    />
    <div class="p-4">
-     <h2 class="text-xl  font-semibold">ProductName:{foodName}</h2>
-     <p class="text-gray-600">Query Title:{foodDonatorName}</p>
-     <p class="text-gray-600">BrandName:{foodQuantity}</p>
-     <p class="text-gray-600">Date Posted:{expireDate}</p>
-     <p class="text-gray-600">AlterNation Reason:{pickupLocation}</p>
-     <p class="text-gray-600">AdditionalNote:{additionalNotes}</p>
+     <h2 class="text-xl  font-semibold">ProductName:{pdName}</h2>
+     <p class="text-gray-600">Query Title:{quaryTitle}</p>
+     <p class="text-gray-600">BrandName:{pdBrand }</p>
+     <p class="text-gray-600">Date Posted:{currentTime}</p>
+    {/* alternatio and date Pasted problem */}
+     <p class="text-gray-600">AlterNation Reason:{boycotReasonDetail}</p>
+
 {/* user information {name,image as thumbnail} */}
      <div class="flex justify-between items-center mt-4">
 
-
-<h1 className="bg-red-400">USER THUBMNAIL</h1>
+     <div className="avatar">
+     <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+       <img src={userImage}/>
+     </div>
+   </div>
+<h1 className="bg-red-400">{userName}</h1>
 
 
 

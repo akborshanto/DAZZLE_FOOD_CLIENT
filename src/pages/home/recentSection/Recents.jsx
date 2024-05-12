@@ -14,8 +14,8 @@ useEffect(()=>{
 
 const getdata=async ()=>{
 setLoading(true)
-//const data=await axios.get(`${import.meta.env.VITE_API_URL}/feature`)
-const data=await axios.get('data.json')
+const data=await axios.get(`${import.meta.env.VITE_API_URL}/addQuaries`)
+// const data=await axios.get('data.json')
 setFeature(data.data)
 setLoading(false)
 }
@@ -23,7 +23,7 @@ setLoading(false)
 getdata()
 },[])
 
-
+console.log(feature)
   return (
 <>
 {

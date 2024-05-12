@@ -3,7 +3,7 @@ import React from 'react'
 const ReqomendationForMe = () => {
   return (
     <div>
-    <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 bg-white text-gray-400">
+{/*     <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 bg-white text-gray-400">
       <div className="col-span-full sm:col-span-3">
         <label className="label">
           <span className="label-text  text-xl font-bold text-black">FoodName</span>
@@ -131,7 +131,9 @@ const ReqomendationForMe = () => {
       />
       </div>
     </div>
-  
+   */}
+   
+   REQOMENDATION FOR  ME
     </div>
   )
 }

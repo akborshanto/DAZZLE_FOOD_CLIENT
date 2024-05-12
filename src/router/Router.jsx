@@ -13,6 +13,7 @@ import ViewDetail from "../pages/home/featureViewDetail/ViewDetail";
 import Quaries from "../pages/quaries/Quaries";
 import ReqomendationForMe from "../pages/reqomendationForMe/ReqomendationForMe";
 import MyQuearies from "../pages/myQuaries/MyQuearies";
+import AddMyQuaris from "../pages/myQuaries/addMyQuaries/AddMyQuaris";
 
 export const router = createBrowserRouter([
   {
@@ -43,7 +44,11 @@ loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/singleFeature/${params
 
 
       /* add my quariestry for this private route deleted */
-      {path:'/myquary',element:<MyQuearies></MyQuearies>},
+      {path:'/myquary',element:<PrivateRoute><MyQuearies></MyQuearies></PrivateRoute>},
+      {path:'/addQuery',element:<PrivateRoute><AddMyQuaris></AddMyQuaris></PrivateRoute>}
+
+
+
     ],
   },
 ]);
