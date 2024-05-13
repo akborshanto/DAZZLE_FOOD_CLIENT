@@ -19,33 +19,13 @@ const QueryCard = ({ myQueryInfo }) => {
     recomendateCount,
   } = myQueryInfo;
 
-  /* update query */
-  const updateQuery = async (e) => {
-    e.preventDefault();
+/* delete data  */
 
-    const form = e.target;
+const handleDelete=(id)=>{
+  console.log(id)
 
-    const My_PdName = form.R_PdName.value;
-    const My_title = form.R_title.value;
-    const My_PdPhoto = form.R_PdPhoto.value;
-    const My_reason = form.R_reason.value;
-    const updateQueryInfo = {
-      My_PdName,
+}
 
-      My_title,
-      My_PdPhoto,
-      My_reason,
-    };
-
-
-    const { data } = await axios.put(
-      `${import.meta.env.VITE_API_URL}/addQuaries/${_id}`,
-      updateQueryInfo
-    );
-
-console.log(data.pdName)
-
-  };
 
   return (
     <div>
@@ -104,9 +84,12 @@ console.log(data.pdName)
          
           {/* =========================================== */}
 
-          <button class="cursor-pointer uppercase bg-red-400 text-white px-2 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition">
+          <button onClick={()=>handleDelete(_id)} class="cursor-pointer uppercase bg-red-400 text-white px-2 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition">
             DELETE
           </button>
+
+
+
         </div>
 
         <hr class="w-full group-hover:h-5 h-3 bg-[#58b0e0] group-hover:transition-all group-hover:duration-300 transition-all duration-300" />

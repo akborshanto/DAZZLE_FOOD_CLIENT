@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React from 'react'
 import { useLoaderData } from 'react-router-dom'
 
@@ -26,7 +27,7 @@ const {
 
 
 
-const updateQuery=(e)=>{
+const updateQuery=async(e)=>{
     e.preventDefault()
     console.log('asdfsaf')
 
@@ -46,8 +47,18 @@ const updateQueryInfo = {
     boycotReasonDetail
   };
 
+/* update fetching */
 
-console.log(updateQueryInfo)
+
+// const url={`${import.meta.env.VITE_API_URL}/updateQuery/${_id}`}
+
+const {data}=await axios.put(`${import.meta.env.VITE_API_URL}/updateQuery/${_id}`,updateQueryInfo)
+
+
+
+console.log(data)
+
+
 
 }
 
