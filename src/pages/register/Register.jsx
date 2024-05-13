@@ -1,9 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import useAuthHook from "../../firebase/authProvider/AuthHook";
 const Register = () => {
   /* auth */
+  const location=useLocation()
+  const navigate=useNavigate()
+  console.log(location.pathname)
   const { createUser, updateProfiles } = useAuthHook();
   // console.log(createUser);
   const handleRegister = (e) => {
@@ -19,18 +22,24 @@ const Register = () => {
     if (password.length < 6) {
       return toast.error(" PASSEORD Length must be at least 6 character");
     }
-    if (!/^(?=.*[A-Z]).{8,}$/.test(password)) {
-      return toast.error("Must have an Uppercase letter in the password");
-    }
-    if (!/^(?=.*[A-Z])(?=.*[a-z]).{8,}$/.test(password)) {
-      return toast("Must have a Lowercase letter in the password");
-    }
+    // if (!/^(?=.*[A-Z]).{8,}$/.test(password)) {
+    //   return toast.error("Must have an Uppercase letter in the password");
+    // }
+    // if (!/^(?=.*[A-Z])(?=.*[a-z]).{8,}$/.test(password)) {
+    //   return toast("Must have a Lowercase letter in the password");
+    // }
 
     /* create a user */
     createUser(email, password)
       .then((res) => {
+        navigate('/')
         updateProfiles(name,photo)
-        .then(res=>console.log(res.user))
+        .then(res=>{
+          
+console.log(res.user)
+
+
+        })
         .catch(err=>console.log(err))
 
         toast.success("successfully created a account").catch((err) => {
@@ -77,7 +86,7 @@ const Register = () => {
                 </p>
               </div>
 
-              <form class="mt-8" >
+              <form class="mt-8" onSubmit={handleRegister}>
                 <div class="space-y-5">
                   <div>
                     <label for="" class="text-base font-medium text-gray-900">
@@ -89,7 +98,7 @@ const Register = () => {
                         type="text"
                         name="name"
                         id=""
-                        placeholder="Enter your full name"
+                        placeholder="Enter your full name" required
                         class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                       />
                     </div>

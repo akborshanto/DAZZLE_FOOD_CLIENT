@@ -15,6 +15,7 @@ import MyQuearies from "../pages/myQuaries/MyQuearies";
 import AddMyQuaris from "../pages/myQuaries/addMyQuaries/AddMyQuaris";
 import QueryDetail from "../pages/queryDetail/QueryDetail";
 import MyRecomendation from "../pages/myReqoomendation/MyRecomendation";
+import MyQueryViewDetail from "../pages/myQuaries/myQureryViewDetail/MyQueryViewDetail";
 
 export const router = createBrowserRouter([
   {
@@ -62,7 +63,14 @@ loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/QueryDetail/${params.i
 
       /* add my quariestry for this private route deleted */
       {path:'/myquary',element:<PrivateRoute><MyQuearies></MyQuearies></PrivateRoute>},
-      {path:'/addQuery',element:<PrivateRoute><AddMyQuaris></AddMyQuaris></PrivateRoute>}
+      {path:'/addQuery',element:<PrivateRoute><AddMyQuaris></AddMyQuaris></PrivateRoute>},
+      /* my query view detail page */
+      {
+        path:'/myQueryDetail/:id',element:<PrivateRoute>
+        <MyQueryViewDetail></MyQueryViewDetail>
+        </PrivateRoute>,
+        loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/myQueryDetail/${params.id}`)
+      }
 
 
 

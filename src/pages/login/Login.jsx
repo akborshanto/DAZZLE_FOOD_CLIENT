@@ -32,7 +32,7 @@ const location=useLocation()
     googleLogin()
       .then((res) => {
         toast.success("successfully Google Login");
-        navigate(location.pathname? location.state :'/')
+        navigate('/')
       })
       .catch((err) => {
         console.log(err.message);

@@ -14,7 +14,7 @@ const {_id,foodName,foodImage,foodQuantity,expiredDateTime,
 
 /* featchi exiros VIEWDETALS */
 
-console.table(singleFeatur)
+
   return (
     <div>
     <section className="dark:bg-gray-100 text-white">

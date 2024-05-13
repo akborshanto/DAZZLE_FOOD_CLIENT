@@ -1,12 +1,12 @@
 import React from "react";
 import useAuthHook from "../../../firebase/authProvider/AuthHook";
 import axios from "axios";
-import './bg.css'
+import "./bg.css";
 const AddMyQuaris = () => {
   const { user } = useAuthHook();
 
   /* hadnleSUBMIT QUERY */
-  const handleSubmitQueary =async (e) => {
+  const handleSubmitQueary = async (e) => {
     e.preventDefault();
     const form = e.target;
     const pdName = form.pdName.value;
@@ -15,16 +15,16 @@ const AddMyQuaris = () => {
     const quaryTitle = form.quaryTitle.value;
     const boycotReasonDetail = form.boycotReasonDetail.value;
 
-/* user image and email */
+    /* user image and email */
 
     const userEmail = user?.email;
-    const userName =user?.displayName;
+    const userName = user?.displayName;
     const userImage = user?.photoURL;
     const currentTime = new Date().toLocaleString();
     const recomendateCount = parseInt(form.recomendateCount.value);
 
     const addQueryInfo = {
-        pdName,
+      pdName,
       pdBrand,
       pdPhoto,
       quaryTitle,
@@ -35,18 +35,18 @@ const AddMyQuaris = () => {
       currentTime,
       recomendateCount,
     };
-console.log(addQueryInfo)
+    console.log(addQueryInfo);
     /* asixis data fetching */
-    
-        const {data}=await axios.post(`${import.meta.env.VITE_API_URL}/addQuaries`,addQueryInfo)
-       
 
-
-  }
+    const { data } = await axios.post(
+      `${import.meta.env.VITE_API_URL}/addQuaries`,
+      addQueryInfo
+    );
+  };
 
   return (
     <div className="p-5 bg">
-      <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 bg-white text-gray-400 p-8 bg-white lg:p-12">
+      <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3  text-gray-400 p-8 lg:p-12">
         <form onSubmit={handleSubmitQueary}>
           <div className="col-span-full sm:col-span-3">
             <label className="label">
@@ -61,6 +61,7 @@ focus:border-purple-700 focus:outline-none focus:ring-2
 focus:ring-purple-500 font-bold text-gray"
               placeholder="product name...."
               name="pdName"
+              required
             />
           </div>
           <div className="col-span-full sm:col-span-3">
@@ -76,6 +77,7 @@ focus:border-purple-700 focus:outline-none focus:ring-2
 focus:ring-purple-500 font-bold text-gray"
               placeholder="product brand..."
               name="pdBrand"
+              required
             />
           </div>
 
@@ -92,6 +94,7 @@ focus:border-purple-700 focus:outline-none focus:ring-2
 focus:ring-purple-500 font-bold text-gray"
               placeholder="product image url..."
               name="pdPhoto"
+              required
             />
           </div>
           <div className="col-span-full sm:col-span-2">
@@ -107,6 +110,7 @@ focus:border-purple-700 focus:outline-none focus:ring-2
 focus:ring-purple-500 font-bold text-gray"
               placeholder="quary title..."
               name="quaryTitle"
+              required
             />
           </div>
           <div className="col-span-full sm:col-span-2">
@@ -122,11 +126,12 @@ focus:border-purple-700 focus:outline-none focus:ring-2
 focus:ring-purple-500 font-bold text-gray"
               placeholder="boycoting reasin detail..."
               name="boycotReasonDetail"
+              required
             />
           </div>
           {/* user inforamtin yet to create rr */}
 
-{/*           <div className="col-span-full sm:col-span-2">
+          {/*           <div className="col-span-full sm:col-span-2">
             <label className="label">
               <span className="label-text text-xl font-bold">User Email</span>
             </label>
@@ -204,8 +209,9 @@ focus:border-purple-700 focus:outline-none focus:ring-2
 focus:ring-purple-500 font-bold text-gray"
               placeholder="boycoting resion  detail..."
               name="recomendateCount"
-              type='number'
+              type="number"
               defaultValue={0}
+              required
             />
           </div>
 
