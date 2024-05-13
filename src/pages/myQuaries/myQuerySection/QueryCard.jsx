@@ -2,8 +2,9 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import useAuthHook from "../../../firebase/authProvider/AuthHook";
+import { toast } from "react-toastify";
 
-const QueryCard = ({ myQueryInfo }) => {
+const QueryCard = ({ myQueryInfo,handleDelete }) => {
   const {user}=useAuthHook()
   const {
     _id,
@@ -20,11 +21,6 @@ const QueryCard = ({ myQueryInfo }) => {
   } = myQueryInfo;
 
 /* delete data  */
-
-const handleDelete=(id)=>{
-  console.log(id)
-
-}
 
 
   return (
