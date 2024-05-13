@@ -16,6 +16,7 @@ import AddMyQuaris from "../pages/myQuaries/addMyQuaries/AddMyQuaris";
 import QueryDetail from "../pages/queryDetail/QueryDetail";
 import MyRecomendation from "../pages/myReqoomendation/MyRecomendation";
 import MyQueryViewDetail from "../pages/myQuaries/myQureryViewDetail/MyQueryViewDetail";
+import UpdateMyQuery from "../pages/myQuaries/updateMyQuery/UpdateMyQuery";
 
 export const router = createBrowserRouter([
   {
@@ -70,6 +71,13 @@ loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/QueryDetail/${params.i
         <MyQueryViewDetail></MyQueryViewDetail>
         </PrivateRoute>,
         loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/myQueryDetail/${params.id}`)
+      },
+      /* update my query */
+      {
+        path:'/updateQuery/:id',
+        element:<UpdateMyQuery></UpdateMyQuery>,
+        loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/myQueryDetail/${params.id}`)
+        
       }
 
 
