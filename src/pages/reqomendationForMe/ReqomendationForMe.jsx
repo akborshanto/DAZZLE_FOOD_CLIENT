@@ -158,7 +158,7 @@ console.log(recoForme)
  
          </th>
          <th>RECOMENDER_INFORMATION</th>
-         <th></th>
+         <th>PRODUCT INFORMATION</th>
          <th>ECOMENDER_TITLE</th>
          <th>ECOMENDER_REASON</th>
        </tr>

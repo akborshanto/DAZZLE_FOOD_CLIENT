@@ -18,7 +18,7 @@ const QuariesCard = ({interrogatory}) => {
       } = interrogatory;
 
       /*  */
-    
+
   return (
     <div>
     <div class="w-80 p-4 bg-white rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 ease-in-out">
