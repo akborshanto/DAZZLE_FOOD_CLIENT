@@ -20,6 +20,7 @@ const location=useLocation()
     loginUser(email, password)
       .then((res) => {
         toast.success("successfully logged in");
+        navigate(location.pathname? location.state :'/')
       })
       .catch((err) => {
         console.log(err.message);

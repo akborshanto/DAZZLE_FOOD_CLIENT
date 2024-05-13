@@ -1,5 +1,6 @@
 import React from 'react'
 import MyQuariesBanner from './myQuariesBanner/MyQuariesBanner'
+import MyQuerySection from './myQuerySection/MyQuerySection'
 
 const MyQuearies = () => {
   return (
@@ -7,6 +8,7 @@ const MyQuearies = () => {
 
 
     <MyQuariesBanner></MyQuariesBanner>
+    <MyQuerySection></MyQuerySection>
     </div>
   )
 }

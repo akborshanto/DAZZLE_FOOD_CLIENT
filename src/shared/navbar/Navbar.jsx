@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const Navbar = () => {
   /* theme */
-  const [theme,setTheme]=useState("fantasy")
+  const [theme,setTheme]=useState("light")
   const { user, logOut } = useAuthHook();
   console.log(user);
   /* logout */
@@ -38,6 +38,7 @@ const handleTheme=(e)=>{
   /* condition */
   if(e.target.checked){
     setTheme( "light")
+    
   }else{
 
     setTheme('retro')

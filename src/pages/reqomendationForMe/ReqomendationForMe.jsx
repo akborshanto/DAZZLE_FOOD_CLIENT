@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-
+import './bg.css'
 const ReqomendationForMe = () => {
 const[recoForme,setRecoForMe]=useState([])
 
@@ -19,7 +19,7 @@ setRecoForMe(data)
 console.log(recoForme)
 
   return (
-    <div>
+    <div className='bg text-white'>
 {/*     <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 bg-white text-gray-400">
       <div className="col-span-full sm:col-span-3">
         <label className="label">
@@ -156,11 +156,11 @@ console.log(recoForme)
        <tr>
          <th>
  
-         </th>
-         <th>RECOMENDER_INFORMATION</th>
-         <th>PRODUCT INFORMATION</th>
-         <th>ECOMENDER_TITLE</th>
-         <th>ECOMENDER_REASON</th>
+         </th >
+         <th className='text-white font-bold font-lato p-6 text-[16px]'>RECOMENDER_INFORMATION</th>
+         <th className='text-white font-bold font-lato p-6 text-[16px]'>PRODUCT INFORMATION</th>
+         <th className='text-white font-bold font-lato p-6 text-[16px]'>ECOMENDER_TITLE</th>
+         <th className='text-white font-bold font-lato p-6 text-[16px]'>ECOMENDER_REASON</th>
        </tr>
      </thead>
      <tbody>

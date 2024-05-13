@@ -3,7 +3,7 @@ import { Link} from "react-router-dom";
 import './err.css'
 const Errors = () => {
   return (
-    <div className='mx-auto'>
+    <div className='mx-auto bg'>
 
 
 

@@ -1,7 +1,7 @@
 import React from "react";
 import useAuthHook from "../../../firebase/authProvider/AuthHook";
 import axios from "axios";
-
+import './bg.css'
 const AddMyQuaris = () => {
   const { user } = useAuthHook();
 
@@ -14,11 +14,14 @@ const AddMyQuaris = () => {
     const pdPhoto = form.pdPhoto.value;
     const quaryTitle = form.quaryTitle.value;
     const boycotReasonDetail = form.boycotReasonDetail.value;
-    const userEmail = form.userEmail.value;
-    const userName = form.userName.value;
-    const userImage = form.userImage.value;
-    const currentTime = form.currentTime.value;
-    const recomendateCount = form.recomendateCount.value;
+
+/* user image and email */
+
+    const userEmail = user?.email;
+    const userName =user?.displayName;
+    const userImage = user?.photoURL;
+    const currentTime = new Date().toLocaleString();
+    const recomendateCount = parseInt(form.recomendateCount.value);
 
     const addQueryInfo = {
         pdName,
@@ -32,18 +35,17 @@ const AddMyQuaris = () => {
       currentTime,
       recomendateCount,
     };
-
+console.log(addQueryInfo)
     /* asixis data fetching */
     
         const {data}=await axios.post(`${import.meta.env.VITE_API_URL}/addQuaries`,addQueryInfo)
        
 
-console.log(data)
 
   }
 
   return (
-    <div className="p-5">
+    <div className="p-5 bg">
       <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 bg-white text-gray-400 p-8 bg-white lg:p-12">
         <form onSubmit={handleSubmitQueary}>
           <div className="col-span-full sm:col-span-3">
@@ -124,7 +126,7 @@ focus:ring-purple-500 font-bold text-gray"
           </div>
           {/* user inforamtin yet to create rr */}
 
-          <div className="col-span-full sm:col-span-2">
+{/*           <div className="col-span-full sm:col-span-2">
             <label className="label">
               <span className="label-text text-xl font-bold">User Email</span>
             </label>
@@ -187,7 +189,7 @@ focus:ring-purple-500 font-bold text-gray"
               name="currentTime"
               
             />
-          </div>
+          </div> */}
           <div className="col-span-full sm:col-span-2">
             <label className="label">
               <span className="label-text text-xl font-bold">
@@ -202,7 +204,7 @@ focus:border-purple-700 focus:outline-none focus:ring-2
 focus:ring-purple-500 font-bold text-gray"
               placeholder="boycoting resion  detail..."
               name="recomendateCount"
-              type={``}
+              type='number'
               defaultValue={0}
             />
           </div>

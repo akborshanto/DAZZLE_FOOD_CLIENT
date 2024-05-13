@@ -7,7 +7,7 @@ const PrivateRoute = ({children}) => {
   const { user, setUser, loading, setLoding } = useAuthHook();
 /* location */
 const location=useLocation()
-console.log(location)
+
 if(loading){
 
   return <Loading></Loading>
