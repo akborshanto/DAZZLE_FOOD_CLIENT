@@ -6,8 +6,7 @@ import QuariesCard from './QuariesCard'
 
 const Quaries = () => {
 /* serarch  */
-const [search,setSearch]=useState("")
-
+const [searchQuery,setSearchQuery]=useState("")
 
   const {loading,setLoading}=useAuthHook()
 const [quaries,setQuaries]=useState([])
@@ -23,17 +22,16 @@ const  getData=async ()=>{
 
 getData()
 },[])
-console.log(search)
-
 
 
 
 /* search funcioalitry */
-//quary filter by productName
-const queryFilter=quaries.filter(filters=>filters?.pdName?.toLowerCase().includes(search.toLowerCase()))
+// //quary filter by productName
+// const queryFilter=quaries.filter(filters=>filters?.pdName?.toLowerCase().includes(search.toLowerCase()))
+
+const searchQueryFilter=quaries.filter(queryItem=> queryItem?.pdName?.toLowerCase().includes(searchQuery.toLowerCase()))
 
 
-console.log(search)
 
 /* i will show the interrogatory data with 3 column */
   return (
@@ -46,11 +44,11 @@ console.log(search)
 <input
 class=" bg-zinc-200 text-zinc-600 font-mono ring-1 ring-zinc-400 focus:ring-2 focus:ring-rose-400 outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 rounded-full px-4 py-2 shadow-md focus:shadow-lg focus:shadow-rose-400 dark:shadow-md dark:shadow-purple-500"
 autocomplete="off"
-placeholder="Search here..."
+placeholder="Search query..."
 name="text"
 type="text"
-value={search}
-onChange={(e)=>setSearch(e.target.value)}
+value={searchQuery}
+onChange={(e)=>setSearchQuery(e.target.value)}
 
 />
 
@@ -66,7 +64,7 @@ onChange={(e)=>setSearch(e.target.value)}
     
       {
       
-        queryFilter.map(interrogatory=><QuariesCard key={Math.random()} interrogatory={interrogatory}></QuariesCard>)
+        searchQueryFilter.map(interrogatory=><QuariesCard key={Math.random()} interrogatory={interrogatory}></QuariesCard>)
       
       }
       

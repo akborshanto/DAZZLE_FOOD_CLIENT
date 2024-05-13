@@ -1,9 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuthHook from "../../firebase/authProvider/AuthHook";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
+  /* theme */
+  const [theme,setTheme]=useState("fantasy")
   const { user, logOut } = useAuthHook();
   console.log(user);
   /* logout */
@@ -16,6 +18,35 @@ const Navbar = () => {
         console.log(err.message);
       });
   };
+
+
+/* theme add  and save the localStorage */
+
+useEffect(()=>{
+
+
+  localStorage.setItem('theme',theme)
+const localTheme=localStorage.getItem('theme')
+document.querySelector('html').setAttribute('data-theme',localTheme)
+
+
+},[theme])
+
+
+const handleTheme=(e)=>{
+
+  /* condition */
+  if(e.target.checked){
+    setTheme( "light")
+  }else{
+
+    setTheme('retro')
+  }
+
+
+}
+
+
   /* links */
 
   const links = (
@@ -76,12 +107,16 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl font-sedan">DAZZLE_FOOD</a>
+        <a className="btn btn-ghost text-xl font-sedan">QUERY PD GATEWAY</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
+      <input type="checkbox" className="toggle toggle-error"   onClick={handleTheme}/>
+
+
+      
         {user ? (
           <div className="avatar">
             <div className="w-10 rounded-full">
