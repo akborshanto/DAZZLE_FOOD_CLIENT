@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import useAuthHook from '../../firebase/authProvider/AuthHook';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const MyRecomendation = () => {
 const {user}=useAuthHook()
@@ -24,6 +25,13 @@ getData()
 const getData=async ()=>{
 const {data}=await axios.get(`${import.meta.env.VITE_API_URL}/specifiqReco/${user.email}`)
 setMyReco(data)
+Swal.fire({
+  title: "Deleted!",
+  text: "Your Recomendation has been deleted.",
+  icon: "success"
+});
+
+
 
 }
 
@@ -31,12 +39,21 @@ setMyReco(data)
 /* hadnle Delete button */
 const handleDeleteReco=async(id)=>{
 
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to Recomendation DELETE this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  })
+
+
+
 try{
 
 const {data}=await axios.delete(`${import.meta.env.VITE_API_URL}/specifiqRecoDelete/${id}`)
-toast.success("SUCCEFULLY DELETED")
-
-
 }catch(err){
   console.log(err)
 }

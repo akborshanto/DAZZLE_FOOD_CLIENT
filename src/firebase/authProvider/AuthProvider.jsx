@@ -38,14 +38,21 @@ const AuthProvider = ({ children }) => {
 
   /* OnAUTH STATE */
   useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      setLoading(false);
-    });
+  
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      /* user */
+      if (currentUser) {
+        setUser(currentUser);
+        setLoading(false)
+//console.log(currentUser);
+        return () => {
+          unsubscribe();
+        };
+      } else {
+  setUser(null)
 
-    return () => {
-      return unSubscribe();
-    };
+      }
+    });
   }, []);
   /* google login */
   const googleLogin = () => {
@@ -62,21 +69,20 @@ const AuthProvider = ({ children }) => {
   //     setUser({ ...user, displayName: name, photoURL: photo })
   //   );
   // };
-/* update propile */
-const updateProfiles=(name,photo)=>{
-  setLoading(true)
-    return updateProfile(auth.currentUser, 
-     // displayName: name, photoURL:photo
-     setUser({...user, displayName: name, photoURL:photo})
+  /* update propile */
+  const updateProfiles =(name, photo) => {
+    setLoading(true);
+    return updateProfile(
+      auth.currentUser,
+      // displayName: name, photoURL:photo
+      setUser({ ...user, displayName: name, photoURL: photo })
       // Profile updated!
       // ...
     ).catch((error) => {
       // An error occurred
       // ...
     });
-  
-  }
-
+  };
 
   /* loagout a user */
   const logOut = () => {
@@ -94,7 +100,7 @@ const updateProfiles=(name,photo)=>{
     logOut,
     googleLogin,
     updateProfiles,
-    setLoading
+    setLoading,
   };
 
   return (

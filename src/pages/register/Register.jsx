@@ -4,9 +4,9 @@ import { toast } from "react-toastify";
 import useAuthHook from "../../firebase/authProvider/AuthHook";
 const Register = () => {
   /* auth */
-  const location=useLocation()
-  const navigate=useNavigate()
-  console.log(location.pathname)
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location.pathname);
   const { createUser, updateProfiles } = useAuthHook();
   // console.log(createUser);
   const handleRegister = (e) => {
@@ -32,25 +32,41 @@ const Register = () => {
     /* create a user */
     createUser(email, password)
       .then((res) => {
-        navigate('/')
-        updateProfiles(name,photo)
-        .then(res=>{
-          
-//console.log(res.user)
+        console.log(res.user);
+
+/* update photo and img */
+
+updateProfiles(name,photo)
+.then(res=>console.log(res.user))
+.catch(err=>console.log(err))
 
 
-        })
-        .catch(err=>console.log(err))
 
-        toast.success("successfully created a account").catch((err) => {
-          console.log(err);
-        });
 
-        toast.success("Successfully created a User");
+        navigate("/")
       })
       .catch((err) => {
-        console.log(err.message);
+        console.log(err);
       });
+
+    // .then((res) => {
+    // //  navigate("/");
+    //   updateProfiles(name, photo)
+    //     .then((res) => {
+    //       console.log(res.user);
+    //       toast.success("succefully Register");
+    //     })
+    //     .catch((err) => console.log(err));
+
+    //   toast.success("successfully created a account").catch((err) => {
+    //     console.log(err);
+    //   });
+
+    //   toast.success("Successfully created a User");
+    // })
+    // .catch((err) => {
+    //   console.log(err.message);
+    // });
 
     /* update profile */
   };
@@ -98,7 +114,8 @@ const Register = () => {
                         type="text"
                         name="name"
                         id=""
-                        placeholder="Enter your full name" required
+                        placeholder="Enter your full name"
+                        required
                         class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                       />
                     </div>

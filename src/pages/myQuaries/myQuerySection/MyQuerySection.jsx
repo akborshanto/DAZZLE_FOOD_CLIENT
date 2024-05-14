@@ -3,6 +3,7 @@ import useAuthHook from "../../../firebase/authProvider/AuthHook";
 import axios from "axios";
 import QueryCard from "./QueryCard";
 import { toast } from "react-toastify";
+import Swal from 'sweetalert2';
 
 const MyQuerySection = () => {
   const { user, loading, setLoading } = useAuthHook();
@@ -34,13 +35,22 @@ const sort=myQuery.sort((a,b)=> Date.parse( b.currentTime )- Date.parse( a.curre
 /* hadnle */
 
   const handleDelete= async(id)=>{
-
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to Recomendation DELETE this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    })
+  
 
     try{
     const {data}=await axios.delete(`${import.meta.env.VITE_API_URL}/myQueryDelete/${id}`,)
    // toast.success("succesfullt addedd")
     //console.log(data)
-    toast.success("DELETED")
+    
 getData()
     
     }catch(err){
