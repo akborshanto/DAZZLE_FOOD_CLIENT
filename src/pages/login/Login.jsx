@@ -23,7 +23,7 @@ const location=useLocation()
         navigate(location.pathname? location.state :'/')
       })
       .catch((err) => {
-        console.log(err.message);
+       // console.log(err.message);
       });
   };
 

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { useLoaderData, useNavigate } from 'react-router-dom'
 
 const UpdateMyQuery = () => {
 
@@ -9,8 +9,7 @@ const UpdateMyQuery = () => {
 
 
 const updateLoader=useLoaderData()
-console.log(updateLoader)
-
+const navigate=useNavigate()
 const {
     _id,
     pdBrand,
@@ -29,7 +28,7 @@ const {
 
 const updateQuery=async(e)=>{
     e.preventDefault()
-    console.log('asdfsaf')
+  //  console.log('asdfsaf')
 
     const form = e.target;
     const pdName = form.pdName.value;
@@ -57,7 +56,7 @@ const {data}=await axios.put(`${import.meta.env.VITE_API_URL}/updateQuery/${_id}
 
 
 console.log(data)
-
+navigate("/myquary")
 
 
 }

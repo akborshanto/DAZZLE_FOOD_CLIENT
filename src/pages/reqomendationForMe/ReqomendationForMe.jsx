@@ -16,7 +16,6 @@ setRecoForMe(data)
 
 
 
-console.log(recoForme)
 
   return (
     <div className='bg text-white'>

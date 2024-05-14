@@ -14,7 +14,7 @@ const AddMyQuaris = () => {
     const pdPhoto = form.pdPhoto.value;
     const quaryTitle = form.quaryTitle.value;
     const boycotReasonDetail = form.boycotReasonDetail.value;
-
+//console.log(quaryTitle)
     /* user image and email */
 
     const userEmail = user?.email;
@@ -35,7 +35,7 @@ const AddMyQuaris = () => {
       currentTime,
       recomendateCount,
     };
-    console.log(addQueryInfo);
+    //console.log(addQueryInfo);
     /* asixis data fetching */
 
     const { data } = await axios.post(
@@ -103,7 +103,17 @@ focus:ring-purple-500 font-bold text-gray"
                 Quary Title
               </span>
             </label>
-            <input
+
+
+            <select name="quaryTitle" className="select select-error w-full max-w-xs bg-white">
+
+            <option value="Is there any Better product that gives me the same quality?">Is there any Better product that gives me the same quality?</option>
+
+          </select>
+
+
+
+{/*             <input
               class="rounded-full w-full bg-violet-100 text-xl border-2
 border-purple-500 p-4 placeholder-purple-400 focus:text-violet-950
 focus:border-purple-700 focus:outline-none focus:ring-2
@@ -111,7 +121,7 @@ focus:ring-purple-500 font-bold text-gray"
               placeholder="quary title..."
               name="quaryTitle"
               required
-            />
+            /> */}
           </div>
           <div className="col-span-full sm:col-span-2">
             <label className="label">
@@ -129,72 +139,7 @@ focus:ring-purple-500 font-bold text-gray"
               required
             />
           </div>
-          {/* user inforamtin yet to create rr */}
-
-          {/*           <div className="col-span-full sm:col-span-2">
-            <label className="label">
-              <span className="label-text text-xl font-bold">User Email</span>
-            </label>
-            <input
-              class="rounded-full w-full bg-violet-100 text-xl border-2
-border-purple-500 p-4 placeholder-purple-400 focus:text-violet-950
-focus:border-purple-700 focus:outline-none focus:ring-2
-focus:ring-purple-500 font-bold text-gray"
-              placeholder="user email....."
-              defaultValue={user?.email}
-              disabled
-              name="userEmail"
-            />
-          </div>
-          <div className="col-span-full sm:col-span-2">
-            <label className="label">
-              <span className="label-text text-xl font-bold">Name</span>
-            </label>
-            <input
-              class="rounded-full w-full bg-violet-100 text-xl border-2
-border-purple-500 p-4 placeholder-purple-400 focus:text-violet-950
-focus:border-purple-700 focus:outline-none focus:ring-2
-focus:ring-purple-500 font-bold text-gray"
-              placeholder="Name..."
-              defaultValue={user?.displayName}
-              disabled
-              name="userName"
-            />
-          </div>
-          <div className="col-span-full sm:col-span-2">
-            <label className="label">
-              <span className="label-text text-xl font-bold">Image</span>
-            </label>
-            <input
-              class="rounded-full w-full bg-violet-100 text-xl border-2
-border-purple-500 p-4 placeholder-purple-400 focus:text-violet-950
-focus:border-purple-700 focus:outline-none focus:ring-2
-focus:ring-purple-500 font-bold text-gray"
-              placeholder="image..."
-              defaultValue={user?.photoURL}
-              disabled
-              name="userImage"
-              type="text"
-            />
-          </div>
-          <div className="col-span-full sm:col-span-2">
-            <label className="label">
-              <span className="label-text text-xl font-bold">
-                Curren Data And Time
-              </span>
-            </label>
-            <input
-              class="rounded-full w-full bg-violet-100 text-xl border-2
-border-purple-500 p-4 placeholder-purple-400 focus:text-violet-950
-focus:border-purple-700 focus:outline-none focus:ring-2
-focus:ring-purple-500 font-bold text-gray"
-              placeholder="boycoting reasin detail..."
-              defaultValue={new Date().toLocaleString()}
-              disabled
-              name="currentTime"
-              
-            />
-          </div> */}
+       
           <div className="col-span-full sm:col-span-2">
             <label className="label">
               <span className="label-text text-xl font-bold">

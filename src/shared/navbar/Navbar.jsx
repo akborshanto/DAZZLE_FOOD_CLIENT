@@ -7,7 +7,7 @@ const Navbar = () => {
   /* theme */
   const [theme,setTheme]=useState("light")
   const { user, logOut } = useAuthHook();
-  console.log(user);
+ // console.log(user);
   /* logout */
   const handleLogOut = () => {
     logOut()
@@ -52,12 +52,20 @@ const handleTheme=(e)=>{
 
   const links = (
     <Fragment>
+
+
+
       <li>
         <NavLink to="/">HOME</NavLink>
       </li>
       <li>
         <NavLink to="/quaries">Quaries</NavLink>
       </li>
+
+    <li>
+    <NavLink to="/pagination">pagination</NavLink>
+      
+    </li>
 
       {user && (
         <li>

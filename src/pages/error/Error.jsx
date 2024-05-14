@@ -15,7 +15,7 @@ const Errors = () => {
 <div class="w-full h-40 flex items-center justify-center cursor-pointer">
   <div
     class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden 
-    font-semibold shadow text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-white dark:bg-gray-700 dark:text-white dark:hover:text-gray-200 dark:shadow-none group"
+    font-semibold shadow text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-white dark:bg-gray-700 dark:text-green-600 dark:hover:text-gray-200 dark:shadow-none group"
   >
     <span
       class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"
@@ -57,7 +57,7 @@ const Errors = () => {
       </svg>
     </span>
     <span
-      class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white dark:group-hover:text-green-600"
+      class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-green-400 dark:group-hover:text-green-600"
       >GO BACK HOME</span
     >
   </div>

@@ -1,11 +1,13 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import useAuthHook from "./../../firebase/authProvider/AuthHook";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const QueryDetail = () => {
   const QueryDetails = useLoaderData();
   const { user } = useAuthHook();
+  const navigate=useNavigate()
   const {
     _id,
     pdBrand,
@@ -25,17 +27,6 @@ const QueryDetail = () => {
   const handleADDRecomendation = async (e) => {
     e.preventDefault();
     const form = e.target;
-    // const pdName = form.pdName.value;
-    //     const pdBrand = form.pdBrand.value;
-    //     const pdPhoto = form.pdPhoto.value;
-
-    //     const boycotReasonDetail = form.boycotReasonDetail.value;
-    //    const userEmail = form.userEmail.value;
-    //    const userName = form.userName.value;
-    //     const userImage = form.userImage.value;
-    //     const currentTime = form.currentTime.value;
-    //     const recomendateCount = form.recomendateCount.value;
-    /* recomendtain form */
 
     const R_title = form.R_title.value;
     const R_PdName = form.R_PdName.value;
@@ -80,13 +71,15 @@ const QueryDetail = () => {
     /* asixis data fetching */
 
     //         const {data}=await axios.post(`${import.meta.env.VITE_API_URL}/addQuaries`,addQueryInfo)
+navigate('/quaries')
 
+toast.success("Add A Recomendation")
     // console.log(data)
   };
 
   return (
     <div>
-      <section className="dark:bg-gray-100 text-white">
+      <section className="dark:bg-gray-100 text-green-500">
         <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
           <div>
             <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
@@ -177,7 +170,7 @@ const QueryDetail = () => {
                         onClick={() =>
                           document.getElementById("my_modal_4").showModal()
                         }
-                        class="cursor-pointer uppercase bg-white font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black"
+                        class="cursor-pointer uppercase bg-green-400 font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black"
                       >
 
                       <button
@@ -221,6 +214,7 @@ focus:ring-purple-500 font-bold text-gray"
                                   placeholder="Recommendation Title...."
                                   name="R_title"
                                   type="text"
+                                  required
                                 />
                               </div>
                               <div className="col-span-full sm:col-span-3">
@@ -237,6 +231,7 @@ focus:ring-purple-500 font-bold text-gray"
                                   placeholder="Recommended product Name..."
                                   name="R_PdName"
                                   type="text"
+                                  required
                                 />
                               </div>
                               <div className="col-span-full sm:col-span-3">
@@ -253,6 +248,7 @@ focus:ring-purple-500 font-bold text-gray"
                                   placeholder="Recommended Product Image...."
                                   name="R_PdPhoto"
                                   type="text"
+                                  required
                                 />
                               </div>
                               <div className="col-span-full sm:col-span-3">
@@ -269,6 +265,7 @@ focus:ring-purple-500 font-bold text-gray"
                                   placeholder="Recommendation reason...."
                                   name="R_reason"
                                   type="text"
+                                  required
                                 />
                               </div>
 
@@ -278,7 +275,13 @@ focus:ring-purple-500 font-bold text-gray"
                               </button>
                             </form>
                           </section>
+{/* all reqomendationd */}
+<button class=" w-full cursor-pointer uppercase bg-green-400 font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black">
+ALL RECOMENDATION
+</button>
 
+
+                          
                           <div className="modal-action">
                             <form method="dialog">
                               {/* if there is a button, it will close the modal */}

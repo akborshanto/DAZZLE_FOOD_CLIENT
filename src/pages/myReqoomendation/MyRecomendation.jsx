@@ -123,10 +123,10 @@ toast.success("SUCCEFULLY DELETED")
           <th>
   
           </th>
-          <th>Name</th>
-          <th>Job</th>
-          <th>Favorite Color</th>
-          <th>Delete Recomendation</th>
+          <th>PRODUCT INFORMATION</th>
+          <th>USER INFORAMTION</th>
+          <th>RECOMENDATION DATE</th>
+          <th>DELETE RECOMENDATION</th>
         </tr>
       </thead>
       <tbody>

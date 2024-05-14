@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const QuariesCard = ({interrogatory}) => {
+  const navigate=useNavigate()
     const {
         _id,
         pdBrand,
@@ -56,26 +57,12 @@ const QuariesCard = ({interrogatory}) => {
  
  
  
-       {/*  <Link>
-          {" "}
-          <Link to={`/viewDetail/${_id}`}>
-            {" "}
-            <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400">
-              VIEW DETAILS
-            </button>
-          </Link>
-        </Link>
-        <Link to="/available_food">
-          {" "}
-          <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400">
-            SHOW ALL
-          </button>
-        </Link> */}
+
       </div>
 
 <Link  to={`/queryDetail/${_id}`}>
       
-<button className=" w-full cursor-pointer uppercase bg-green-300 font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black">
+<button className=" w-full cursor-pointer uppercase bg-green-300 font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black" > 
 RECOMEND{/* recomended */}
       </button>
 </Link>

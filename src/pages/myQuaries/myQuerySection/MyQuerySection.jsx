@@ -39,7 +39,7 @@ const sort=myQuery.sort((a,b)=> Date.parse( b.currentTime )- Date.parse( a.curre
     try{
     const {data}=await axios.delete(`${import.meta.env.VITE_API_URL}/myQueryDelete/${id}`,)
    // toast.success("succesfullt addedd")
-    console.log(data)
+    //console.log(data)
     toast.success("DELETED")
 getData()
     
