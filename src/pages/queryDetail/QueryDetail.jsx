@@ -108,7 +108,7 @@ toast.success("Add A Recomendation")
 			<h3 ><span className='text-gray-600 text-xl lg:text-2xl'>       Date Posted:{currentTime}</span></h3>
       
 		
-      <div class="flex justify-between items-center mt-4 gap-4">
+      <div class="flex justify-between items-center mt-4 ">
 
      
       <div className="avatar">
@@ -230,7 +230,7 @@ toast.success("Add A Recomendation")
     focus:ring-purple-500 font-bold text-gray"
                                 placeholder="Recommended Product Image...."
                                 name="R_PdPhoto"
-                                type="text"
+                                type="url"
                                 required
                               />
                             </div>

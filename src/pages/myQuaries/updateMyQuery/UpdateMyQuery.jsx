@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useLoaderData, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const UpdateMyQuery = () => {
 
@@ -57,7 +58,7 @@ const {data}=await axios.put(`${import.meta.env.VITE_API_URL}/updateQuery/${_id}
 
 console.log(data)
 navigate("/myquary")
-
+toast.success("SUCCESSFULLY UPDATED QUERY")
 
 }
 
@@ -84,6 +85,7 @@ focus:ring-purple-500 font-bold text-gray"
     defaultValue={pdName}
           name="pdName"
           type="text"
+          required
         />
       </div>
 =
@@ -102,6 +104,7 @@ focus:ring-purple-500 font-bold text-gray"
 defaultValue={quaryTitle}
           name="quaryTitle"
           type="text"
+          required
         />
       </div>
       <div className="col-span-full sm:col-span-3">
@@ -119,6 +122,7 @@ focus:ring-purple-500 font-bold text-gray"
           name="pdPhoto"
  defaultValue={pdPhoto}
           type="text"
+          required
         />
       </div>
       <div className="col-span-full sm:col-span-3">
@@ -136,6 +140,7 @@ focus:ring-purple-500 font-bold text-gray"
 defaultValue={boycotReasonDetail}
           name="boycotReasonDetail"
           type="text"
+          required
         />
       </div>
 
