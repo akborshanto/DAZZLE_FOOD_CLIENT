@@ -158,9 +158,9 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost  font-sedan  text-14px md:text-xl lg:text-2xl ">
-          QUERY PD GATEWAY
-          <img src={logo} alt="" className="w-10" />
+        <a className="btn btn-ghost  font-sedan  text-14px md:text-[20px] lg:text-2xl ">
+        <img src={logo} alt="" className="w-8" />
+          QUERY PD     
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -175,7 +175,7 @@ const Navbar = () => {
 
         {user ? (
           <div className="avatar mx-4">
-            <div className="w-10 rounded-full">
+            <div className="w-8 lg:w-10 rounded-full">
               <img
                 src={user?.photoURL}
                 referrerPolicy="no-referrer"
@@ -192,14 +192,14 @@ const Navbar = () => {
           <Link to="/login">
             <button
               onClick={handleLogOut}
-              class="cursor-pointer uppercase bg-white font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black"
+              class="cursor-pointer uppercase bg-white font-bold my-6 lg:px-4 lg:py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black"
             >
               LOGOUT
             </button>
           </Link>
         ) : (
           <Link to="/login">
-            <button class="cursor-pointer uppercase bg-white font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black">
+            <button class="cursor-pointer uppercase bg-white font-bold my-6 lg:px-4 lg:py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black">
               LOGIN
             </button>
           </Link>

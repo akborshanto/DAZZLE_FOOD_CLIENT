@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuthHook from "../../firebase/authProvider/AuthHook";
 import { toast } from "react-toastify";
+import './bg.css'
 const Login = () => {
   const { loginUser, googleLogin } = useAuthHook();
 /* location and navigate */
@@ -48,7 +49,7 @@ const location=useLocation()
         <div class="absolute inset-0">
           <img
             class="object-cover w-full h-full"
-            src="https://cdn.rareblocks.xyz/collection/celebration/images/signup/2/woman-working-laptop.jpg"
+            src="https://img.freepik.com/free-vector/data-security-technology-background-vector-blue-tone_53876-112201.jpg?t=st=1715671941~exp=1715675541~hmac=0f5872dc09e3d8b9dbf9ce73424ab17d2d84388f6b50e81f44b4b61ec028efd6&w=900"
             alt=""
           />
         </div>

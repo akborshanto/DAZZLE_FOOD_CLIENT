@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import './bg.css'
+import UseTitle from './../../hooks/UseTitle';
 const ReqomendationForMe = () => {
 const[recoForme,setRecoForMe]=useState([])
 
@@ -9,6 +10,7 @@ const getData=async ()=>{
 
 const {data}=await axios.get(`${import.meta.env.VITE_API_URL}/recoData`)
 setRecoForMe(data)
+
 
 }
   getData()
@@ -19,6 +21,13 @@ setRecoForMe(data)
 
   return (
     <div className='bg text-white'>
+
+
+
+
+
+
+
 {/*     <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 bg-white text-gray-400">
       <div className="col-span-full sm:col-span-3">
         <label className="label">
@@ -178,11 +187,11 @@ setRecoForMe(data)
              <div className="flex items-center gap-3">
                <div className="avatar">
                  <div className="mask mask-squircle w-12 h-12">
-                   <img src={specifiqUser.R_PdPhoto} alt="Avatar Tailwind CSS Component" />
+                   <img src={specifiqUser.R_PdPhoto || "NOT FOUND"} alt={specifiqUser.pd_Name || "not FOUND"} />
                  </div>
                </div>
                <div>
-                 <div className="font-bold">{specifiqUser.pd_Name}</div>
+                 <div className="font-bold">{specifiqUser.pd_Name || ""}</div>
                  <div className="text-sm opacity-50">{specifiqUser.R_title}</div>
                </div>
              </div>
@@ -190,7 +199,7 @@ setRecoForMe(data)
            <td>
           {specifiqUser.current_Name}
              <br/>
-             <span className="badge badge-ghost badge-sm">{specifiqUser.curren_Email}</span>
+             <span className=" badge-sm">{specifiqUser.curren_Email}</span>
            </td>
            <td>{specifiqUser.R_title}</td>
 

@@ -21,7 +21,25 @@ const RecentCard = ({ singFeature }) => {
 
 
 
-   <div class="w-80 p-4 bg-white rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 ease-in-out">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <div class="w-80 p-4 bg-white rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 ease-in-out ">
    <img
      class="w-full h-40 object-cover rounded-t-lg"
      alt={pdName}
@@ -36,17 +54,24 @@ const RecentCard = ({ singFeature }) => {
      <p class="text-gray-600">AlterNation Reason:{boycotReasonDetail}</p>
 
 {/* user information {name,image as thumbnail} */}
-     <div class="flex justify-between items-center mt-4">
+     <div class="flex justify-between items-center mt-4 gap-4">
 
+     
      <div className="avatar">
-     <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+
+     <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
        <img src={userImage}/>
+
+
      </div>
+
    </div>
-<h1 className="bg-red-400">{userName}</h1>
 
+<div>
+<p className="text-gray">{userName}</p>
+<p className="text-gray" title={userEmail}>{userEmail.slice(0,40)}..</p>
 
-
+</div>
 
 
 

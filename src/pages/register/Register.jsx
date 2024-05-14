@@ -77,7 +77,7 @@ updateProfiles(name,photo)
         <div class="absolute inset-0">
           <img
             class="object-cover w-full h-full"
-            src="https://cdn.rareblocks.xyz/collection/celebration/images/signup/2/woman-working-laptop.jpg"
+            src="https://img.freepik.com/free-vector/tiny-people-carrying-key-open-padlock_74855-16292.jpg?t=st=1715672125~exp=1715675725~hmac=4dc890d6863967456b217b620b3486375bc27738eebf33196a7eab50f423f87f&w=996"
             alt=""
           />
         </div>
