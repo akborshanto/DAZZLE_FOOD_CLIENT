@@ -22,19 +22,19 @@ const QuariesCard = ({interrogatory}) => {
 
   return (
     <div>
-    <div class="w-80 p-4 bg-white rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 ease-in-out">
+    <div class="p-4 bg-white rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 ease-in-out">
     <img
-      class="w-full h-40 object-cover rounded-t-lg"
+      class="w-[500px]] h-40 object-cover rounded-t-lg"
       alt={pdName}
       src={pdPhoto}
     />
     <div class="p-4">
       <h2 class="text-xl  font-semibold">ProductName:{pdName}</h2>
       <p class="text-gray-600">Query Title:{quaryTitle}</p>
-      <p class="text-gray-600">BrandName:{pdBrand }</p>
+      <p class="text-gray-600" title={pdBrand}>BrandName:{pdBrand.slice(0,20) }</p>
       <p class="text-gray-600">Date Posted:{currentTime}</p>
      {/* alternatio and date Pasted problem */}
-      <p class="text-gray-600">AlterNation Reason:{boycotReasonDetail}</p>
+      <p class="text-gray-600" title={boycotReasonDetail}>AlterNation Reason:{boycotReasonDetail.slice(0,30)}</p>
  
       <p class="text-gray-600">RecomendateCount:{recomendateCount}</p>
  

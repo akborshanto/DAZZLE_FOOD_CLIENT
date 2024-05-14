@@ -1,26 +1,77 @@
-import React from 'react'
+
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+
+
+//import './styles.css';
+
+// import required modules
 
 const Slider = () => {
+
   return (
     <div>
-    <div
-    className='w-full bg-center bg-cover h-[38rem]'
-    style={{
-      backgroundImage: `url("https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80")`,
+  
+    <Swiper
+    spaceBetween={30}
+    centeredSlides={true}
+    autoplay={{
+      delay: 2000,
+      disableOnInteraction: false,
     }}
+    pagination={{
+      clickable: true,
+    }}
+    navigation={true}
+    modules={[Autoplay, Pagination, Navigation]}
+    className="mySwiper" 
   >
-    <div className='flex items-center justify-center w-full h-full bg-gray-900/70'>
-      <div className='text-center'>
-        <h1 className='text-3xl font-semibold text-white lg:text-4xl'>
-          Build your new <span class='text-blue-400'>Saas</span> Project
-        </h1>
-        <br />
-        <button className=' btn btn-warning w-full px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-gray-600 rounded-md lg:w-auto hover:bg-gray-500 focus:outline-none focus:bg-gray-500'>
-          Post Job & Hire Expert
-        </button>
-      </div>
+    <SwiperSlide>
+    <div className="hero min-h-screen" style={{backgroundImage: 'url(https://img.freepik.com/free-vector/people-shopping-groceries_23-2148530744.jpg?t=st=1715656479~exp=1715660079~hmac=63517079f23f5e09090ea017d1b6b801a4a1907f090ad93cf9be18c78a8c1e7d&w=900)'}}>
+  <div className="hero-overlay "></div>
+  <div className="hero-content text-center text-neutral-content">
+    <div className="max-w-md">
+     {/*  <h1 className="mb-5 text-5xl font-bold">ALTERNATIVE PRDUCT</h1>
+      <p className="mb-5">TAlternative Product means a product, other than the Product, that has been approved by Regulatory Authorities or is being developed for approval by Regulatory Authorities,..</p>
+ */}
     </div>
   </div>
+</div>
+    </SwiperSlide>
+    <SwiperSlide>
+    <div className="hero min-h-screen" style={{backgroundImage: 'url(https://img.freepik.com/free-vector/adopt-pet-concept_23-2148521735.jpg?t=st=1715656396~exp=1715659996~hmac=6bc8d064dec8ec4b9e1528ab1b6b29502b8affa739fb3d3cf376f5e514aad6b2&w=900)'}}>
+  <div className="hero-overlay bg-opacity-60"></div>
+  <div className="hero-content text-center text-neutral-content">
+    <div className="max-w-md">
+{/*       <h1 className="mb-5 text-5xl font-bold">MALAYSIA</h1>
+      <p className="mb-5">Malaysia represents fantastic value for money at almost all levels. Costs for food, lodging, fuel and internal transportation are very reasonable.</p>
+ */}
+    </div>
+  </div>
+</div>
+    </SwiperSlide>
+    <SwiperSlide>
+    <div className="hero min-h-screen" style={{backgroundImage: 'url(https://img.freepik.com/free-vector/flat-hand-drawn-people-shopping-sale_23-2148824303.jpg?t=st=1715656171~exp=1715659771~hmac=08d0b5ddf55c1be6b6f0da9f1ee9dd452491d1d548bac305cc8829d6a4a72aeb&w=900)'}}>
+  <div className="hero-overlay "></div>
+  <div className="hero-content text-center text-neutral-content">
+    <div className="max-w-md">
+{/*       <h1 className="mb-5 text-5xl font-bold">INDONESIA</h1>
+      <p className="mb-5">Indonesia is known for its diverse tourist attractions. The country has an endless list of wonderful tourist places,.</p>
+ */}
+    </div>
+  </div>
+</div>
+    </SwiperSlide>
+
+
+  </Swiper>
     </div>
   )
 }

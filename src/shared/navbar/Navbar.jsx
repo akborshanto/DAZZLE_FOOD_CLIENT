@@ -2,12 +2,12 @@ import React, { Fragment, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuthHook from "../../firebase/authProvider/AuthHook";
 import { toast } from "react-toastify";
-
+import logo from "../../assets/10462349.png";
 const Navbar = () => {
   /* theme */
-  const [theme,setTheme]=useState("light")
+  const [theme, setTheme] = useState("light");
   const { user, logOut } = useAuthHook();
- // console.log(user);
+  // console.log(user);
   /* logout */
   const handleLogOut = () => {
     logOut()
@@ -19,72 +19,114 @@ const Navbar = () => {
       });
   };
 
+  /* theme add  and save the localStorage */
 
-/* theme add  and save the localStorage */
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
 
-useEffect(()=>{
-
-
-  localStorage.setItem('theme',theme)
-const localTheme=localStorage.getItem('theme')
-document.querySelector('html').setAttribute('data-theme',localTheme)
-
-
-},[theme])
-
-
-const handleTheme=(e)=>{
-
-  /* condition */
-  if(e.target.checked){
-    setTheme( "light")
-    
-  }else{
-
-    setTheme('retro')
-  }
-
-
-}
-
+  const handleTheme = (e) => {
+    /* condition */
+    if (e.target.checked) {
+      setTheme("light");
+    } else {
+      setTheme("retro");
+    }
+  };
 
   /* links */
 
   const links = (
     <Fragment>
-
-
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-gradient-to-r from-purple-400 to-cyan-600  text-white"
+              : " border  "
+          }
+        >
+          HOME
+        </NavLink>
+      </li>
 
       <li>
-        <NavLink to="/">HOME</NavLink>
+        <NavLink
+          to="/quaries"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-gradient-to-r from-purple-400 to-cyan-600  text-white"
+              : " border  "
+          }
+        >
+          Quaries
+        </NavLink>
       </li>
+
+      {/* 
       <li>
         <NavLink to="/quaries">Quaries</NavLink>
-      </li>
+      </li> */}
 
-    <li>
-    <NavLink to="/pagination">pagination</NavLink>
-      
-    </li>
+      <li>
+        <NavLink to="/pagination">pagination</NavLink>
+      </li>
 
       {user && (
         <li>
-          <NavLink to="/recomendationForMe">Recommendations For Me</NavLink>
+          <NavLink
+            to="/recomendationForMe"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-gradient-to-r from-purple-400 to-cyan-600  text-white"
+                : " border  "
+            }
+          >
+            Recommendations For Me
+          </NavLink>
         </li>
       )}
 
       {/* priveate route */}
 
-    {user && (
-      <li>
-        <NavLink to="/myquary">My Queries</NavLink>
+      {user && (
+
+        <li>
+        <NavLink
+          to="/myquary"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-gradient-to-r from-purple-400 to-cyan-600  text-white"
+              : " border  "
+          }
+        >
+        My Queries
+        </NavLink>
       </li>
-    )} 
+
+
+
+     
+      )}
 
       {user && (
         <li>
-          <NavLink to="/myReqomendation">My recommendations</NavLink>
-        </li>
+        <NavLink
+          to="/myReqomendation"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-gradient-to-r from-purple-400 to-cyan-600  text-white"
+              : " border  "
+          }
+        >
+        My recommendations
+        </NavLink>
+      </li>
+
+
       )}
     </Fragment>
   );
@@ -111,23 +153,28 @@ const handleTheme=(e)=>{
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className=" z-10 menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-base-100  rounded-box w-52"
           >
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl font-sedan">QUERY PD GATEWAY</a>
+        <a className="btn btn-ghost  font-sedan  text-14px md:text-xl lg:text-2xl ">
+          QUERY PD GATEWAY
+          <img src={logo} alt="" className="w-10" />
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-      <input type="checkbox" className="toggle toggle-error"   onClick={handleTheme}/>
+        <input
+          type="checkbox"
+          className="toggle toggle-error"
+          onClick={handleTheme}
+        />
 
-
-      
         {user ? (
-          <div className="avatar">
+          <div className="avatar mx-4">
             <div className="w-10 rounded-full">
               <img
                 src={user?.photoURL}

@@ -6,7 +6,7 @@ import Item from '../shared/navbar/Item'
 
 const Main = () => {
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto p-4'>
      {/*  <Item></Item> */}
 <Navbar></Navbar>
     <Outlet></Outlet>
