@@ -38,6 +38,7 @@ const QuariesCard = ({interrogatory}) => {
     <p class="text-gray-600">Date Posted:{currentTime}</p>
    {/* alternatio and date Pasted problem */}
     <p class="text-gray-600">AlterNation Reason:{boycotReasonDetail}</p>
+    <p class="text-gray-400 font-bold">recomendateCount:{recomendateCount}</p>
 
 {/* user information {name,image as thumbnail} */}
     <div class="flex justify-between items-center mt-4 gap-4">
@@ -81,7 +82,7 @@ const QuariesCard = ({interrogatory}) => {
         </button>
       </Link> */}
     </div>
-    <Link  to={`/queryDetail/${_id}`}>
+    <Link  to={`/queryDetail/${_id}`} >
       
     <button className=" w-full cursor-pointer uppercase bg-green-300 font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black" > 
     RECOMEND{/* recomended */}

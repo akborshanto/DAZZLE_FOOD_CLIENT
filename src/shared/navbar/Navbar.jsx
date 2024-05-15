@@ -70,10 +70,10 @@ const Navbar = () => {
       <li>
         <NavLink to="/quaries">Quaries</NavLink>
       </li> */}
-
+{/* 
       <li>
         <NavLink to="/pagination">pagination</NavLink>
-      </li>
+      </li> */}
 
       {user && (
         <li>

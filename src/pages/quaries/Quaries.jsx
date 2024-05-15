@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react'
 import useAuthHook from '../../firebase/authProvider/AuthHook'
 import Loading from '../../hooks/Loading'
 import QuariesCard from './QuariesCard'
+import { useNavigate } from 'react-router-dom'
 
 const Quaries = () => {
 /* serarch  */
+const naivgate=useNavigate()
 const [searchQuery,setSearchQuery]=useState("")
 
   const {loading,setLoading}=useAuthHook()
@@ -15,7 +17,8 @@ useEffect(()=>{
 
 const  getData=async ()=>{
 
-  const data=await axios.get(`${import.meta.env.VITE_API_URL}/addQuaries`)
+  //const data=await axios.get(`${import.meta.env.VITE_API_URL}/addQuaries`)
+  const data=await axios.get('https://querypdgateway.vercel.app/addQuaries')
   setQuaries(data.data)
 }
 
@@ -36,9 +39,7 @@ const searchQueryFilter=quaries.filter(queryItem=> queryItem?.pdName?.toLowerCas
 /* i will show the interrogatory data with 3 column */
   return (
     <>
-    {
-      loading ? <Loading></Loading>: 
-      
+ 
       <div>
 <div className='text-center my-12'>
 <input
@@ -72,7 +73,7 @@ onChange={(e)=>setSearchQuery(e.target.value)}
           </div>
           </div>
 
-    }
+    
     
     
     

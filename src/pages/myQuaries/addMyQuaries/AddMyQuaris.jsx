@@ -22,7 +22,7 @@ const AddMyQuaris = () => {
     const userName = user?.displayName;
     const userImage = user?.photoURL;
     const currentTime = new Date().toLocaleString();
-    const recomendateCount = parseInt(form.recomendateCount.value);
+    const recomendateCount = 0;
 
     const addQueryInfo = {
       pdName,
@@ -36,7 +36,7 @@ const AddMyQuaris = () => {
       currentTime,
       recomendateCount,
     };
-    //console.log(addQueryInfo);
+    console.log(addQueryInfo);
     /* asixis data fetching */
 
     const { data } = await axios.post(
@@ -111,7 +111,7 @@ const AddMyQuaris = () => {
  
       />
     </div>
-    <div className="col-span-full sm:col-span-2">
+{/*     <div className="col-span-full sm:col-span-2">
       <label className="label">
         <span className="label-text text-xl font-bold">Recomendation Count</span>
       </label>
@@ -124,7 +124,7 @@ const AddMyQuaris = () => {
    
         required
       ></input>
-    </div>
+    </div> */}
     <div className="col-span-full sm:col-span-2">
       <label className="label">
         <span className="label-text text-xl font-bold">Product Img</span>

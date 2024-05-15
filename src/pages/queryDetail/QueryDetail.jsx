@@ -32,6 +32,7 @@ const QueryDetail = () => {
     const R_PdName = form.R_PdName.value;
     const R_PdPhoto = form.R_PdPhoto.value;
     const R_reason = form.R_reason.value;
+
     /* quary */
     const q_id = _id;
     const pd_Name = pdName;
@@ -40,7 +41,7 @@ const QueryDetail = () => {
     const curren_Email = user?.email;
     const current_Name = user?.displayName;
     const current_Time = new Date().toLocaleString();
-
+    const R_COUNT=0
     /* recomendation couo */
 
     const aDDRecomendationInfo = {
@@ -58,8 +59,10 @@ const QueryDetail = () => {
       curren_Email,
       current_Name,
       current_Time,
+      recomendateCount,
+      R_COUNT
     };
-
+console.log(aDDRecomendationInfo)
     /* post method likely to the recomendatino value */
 
     const { data } = await axios.post(
@@ -67,7 +70,7 @@ const QueryDetail = () => {
       aDDRecomendationInfo
     );
 
-    console.log(aDDRecomendationInfo);
+    //console.log(aDDRecomendationInfo);
     /* asixis data fetching */
 
     //         const {data}=await axios.post(`${import.meta.env.VITE_API_URL}/addQuaries`,addQueryInfo)
@@ -107,6 +110,10 @@ toast.success("Add A Recomendation")
 			<h3 ><span className='text-gray-600 text-xl lg:text-2xl'>        Alternation Reasion:{boycotReasonDetail}</span></h3>
 			<h3 ><span className='text-gray-600 text-xl lg:text-2xl'>       Date Posted:{currentTime}</span></h3>
       
+			<h3 ><span className='text-gray-600 text-xl lg:text-2xl'>       RecomendateCount:{recomendateCount}</span></h3>
+      
+      
+
 		
       <div class="flex justify-between items-center mt-4 ">
 

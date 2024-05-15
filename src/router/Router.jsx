@@ -82,12 +82,12 @@ loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/QueryDetail/${params.i
       },
 
 /* ============paginartionb========== */
-{
+/* {
   path:'/pagination',
   element:<Pagination></Pagination>,
   loader:()=>fetch(`${import.meta.env.VITE_API_URL}/pagination`)
 }
-
+ */
 
 
 
