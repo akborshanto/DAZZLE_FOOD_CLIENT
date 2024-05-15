@@ -46,7 +46,7 @@ loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/singleFeature/${params
 /* query detail */
 {
 path:'/queryDetail/:id',
-element:<PrivateRoute><QueryDetail></QueryDetail></PrivateRoute>,
+element:<QueryDetail></QueryDetail>,
 loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/QueryDetail/${params.id}`)
 
 

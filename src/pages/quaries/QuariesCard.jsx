@@ -32,8 +32,8 @@ const QuariesCard = ({interrogatory}) => {
     src={pdPhoto}
   />
   <div class="p-4">
-    <h2 class="text-xl  font-semibold">ProductName:{pdName}</h2>
-    <p class="text-gray-600">Query Title:{quaryTitle}</p>
+    <h2 class="text-xl  font-semibold" title={pdName}>ProductName:{pdName.slice(0,30)}</h2>
+    <p class="text-gray-600" title={quaryTitle}>Query Title:{quaryTitle.slice(0,30)}</p>
     <p class="text-gray-600" title={pdBrand}>BrandName:{pdBrand.slice(0,20) }</p>
     <p class="text-gray-600">Date Posted:{currentTime}</p>
    {/* alternatio and date Pasted problem */}

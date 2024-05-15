@@ -19,6 +19,7 @@ const  getData=async ()=>{
 
   //const data=await axios.get(`${import.meta.env.VITE_API_URL}/addQuaries`)
   const data=await axios.get('https://querypdgateway.vercel.app/addQuaries')
+  //const data=await axios.get('http://localhost:5000/addQuaries')
   setQuaries(data.data)
 }
 
