@@ -17,7 +17,8 @@ import QueryDetail from "../pages/queryDetail/QueryDetail";
 import MyRecomendation from "../pages/myReqoomendation/MyRecomendation";
 import MyQueryViewDetail from "../pages/myQuaries/myQureryViewDetail/MyQueryViewDetail";
 import UpdateMyQuery from "../pages/myQuaries/updateMyQuery/UpdateMyQuery";
-import Pagination from "../pagination/Pagination";
+//import Pagination from "../pagination/Pagination";
+import Query from "../pagination/Pagination";
 
 export const router = createBrowserRouter([
   {
@@ -83,8 +84,8 @@ loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/QueryDetail/${params.i
 
 /* ============paginartionb========== */
  {
-  path:'/pagination',
-  element:<Pagination></Pagination>,
+  path:'/allquery',
+  element:<Query></Query>,
   loader:()=>fetch(`${import.meta.env.VITE_API_URL}/pagination`)
 }
 

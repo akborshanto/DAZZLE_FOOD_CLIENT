@@ -52,8 +52,8 @@ const Navbar = () => {
           HOME
         </NavLink>
       </li>
-
-      <li>
+{/* 
+     <li>
         <NavLink
           to="/quaries"
           className={({ isActive }) =>
@@ -64,17 +64,29 @@ const Navbar = () => {
         >
           Quaries
         </NavLink>
+      </li> */}
+     <li>
+        <NavLink
+          to="/allquery"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-gradient-to-r from-purple-400 to-cyan-600  text-white"
+              : " border  "
+          }
+        >
+ Query
+        </NavLink>
       </li>
 
       {/* 
       <li>
         <NavLink to="/quaries">Quaries</NavLink>
       </li> */}
-
+{/* 
       <li>
         <NavLink to="/pagination">pagination</NavLink>
       </li> 
-
+ */}
       {user && (
         <li>
           <NavLink

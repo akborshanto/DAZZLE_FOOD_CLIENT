@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import "./pagination.css";
 import PagiCard from "./PagiCard";
 import useAuthHook from "../firebase/authProvider/AuthHook";
-const Pagination = () => {
+const Query = () => {
+  const navigate=useNavigate()
   const [searchQuery, setSearchQuery] = useState("");
   const { loading, setLoading } = useAuthHook();
   const [quaries, setQuaries] = useState([]);
@@ -134,4 +135,4 @@ const Pagination = () => {
   );
 };
 
-export default Pagination;
+export default Query;
