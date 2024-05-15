@@ -25,7 +25,7 @@ const QuariesCard = ({interrogatory}) => {
 
 
 
-  <div class="w-80 p-4 bg-white rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 ease-in-out ">
+  <div class="w-80 p-4 bg-white rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]  ">
   <img
     class="w-full h-40 object-cover rounded-t-lg"
     alt={pdName}
@@ -56,7 +56,7 @@ const QuariesCard = ({interrogatory}) => {
 
 <div>
 <p className="text-gray">{userName}</p>
-<p className="text-gray" title={userEmail}>{userEmail.slice(0,40)}..</p>
+<p className="text-gray" title={userEmail}>{userEmail.slice(0,30)}..</p>
 
 </div>
 

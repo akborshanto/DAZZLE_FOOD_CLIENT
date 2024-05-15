@@ -162,7 +162,7 @@ const {data}=await axios.delete(`${import.meta.env.VITE_API_URL}/specifiqRecoDel
               <div className="flex items-center gap-3">
                 <div className="avatar">
                   <div className="mask mask-squircle w-12 h-12">
-                    <img src={specifiqUser.R_PdPhoto} alt="Avatar Tailwind CSS Component" />
+                    <img src={specifiqUser.R_PdPhoto} alt={specifiqUser.pd_Name}/>
                   </div>
                 </div>
                 <div>

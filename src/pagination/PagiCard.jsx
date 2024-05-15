@@ -20,56 +20,73 @@ const PagiCard = ({pagin}) => {
         /* alter nation count problem */
       } = pagin;
   return (
-    <div>
-    <div class="w-80 lg:w-80 md:w-80 p-4 bg-white rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 ease-in-out">
+    <div class="w-80 p-4 bg-white rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]  ">
     <img
       class="w-full h-40 object-cover rounded-t-lg"
       alt={pdName}
       src={pdPhoto}
     />
-    <div class="p-4 w-[200px]">
-      <h2 class="text-xl  font-semibold  text-gray-400"><span className='text-gray-300 font-bold'>ProductName</span>:{pdName.slice(0,30)}</h2>
-      <p class="text-gray-600"  title={quaryTitle}>Query Title:{quaryTitle.slice(0,30)}</p>
-      <p class="text-gray-600" title={pdBrand} >BrandName:{pdBrand.slice(0,40) }</p>
-      <p class="text-gray-600" title={currentTime}>Date Posted:{currentTime.slice(0,9)}</p>
+    <div class="p-4">
+      <h2 class="text-xl  font-semibold" title={pdName}>ProductName:{pdName.slice(0,30)}</h2>
+      <p class="text-gray-600" title={quaryTitle}>Query Title:{quaryTitle.slice(0,30)}</p>
+      <p class="text-gray-600" title={pdBrand}>BrandName:{pdBrand.slice(0,20) }</p>
+      <p class="text-gray-600">Date Posted:{currentTime}</p>
      {/* alternatio and date Pasted problem */}
-      <p class="text-gray-600  " title={boycotReasonDetail}>AlterNation Reason:{boycotReasonDetail.slice(0,40)}</p>
- 
-      <p class="text-gray-600">RecomendateCount:{recomendateCount}</p>
- 
- {/* user information {name,image as thumbnail} */}
-      <div class="flex justify-between items-center mt-4">
- 
+      <p class="text-gray-600">AlterNation Reason:{boycotReasonDetail}</p>
+      <p class="text-gray-400 font-bold">recomendateCount:{recomendateCount}</p>
+  
+  {/* user information {name,image as thumbnail} */}
+      <div class="flex justify-between items-center mt-4 gap-4">
+  
+      
       <div className="avatar">
-      <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+  
+      <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
         <img src={userImage}/>
+  
+  
       </div>
+  
     </div>
- <h1 className="bg-red-400">{userName}</h1>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
+  
+  <div>
+  <p className="text-gray">{userName}</p>
+  <p className="text-gray" title={userEmail}>{userEmail.slice(0,30)}..</p>
+  
+  </div>
+  
+  
+  
+  
+  
+  
+  
+       {/*  <Link>
+          {" "}
+          <Link to={`/viewDetail/${_id}`}>
+            {" "}
+            <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400">
+              VIEW DETAILS
+            </button>
+          </Link>
+        </Link>
+        <Link to="/available_food">
+          {" "}
+          <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400">
+            SHOW ALL
+          </button>
+        </Link> */}
       </div>
-
-
-<Link  to={`/queryDetail/${_id}`}>
-<button className=" w-full cursor-pointer uppercase bg-green-300 font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black" > 
-RECOMEND{/* recomended */}
-      </button>
-         
-</Link>
+      <Link  to={`/queryDetail/${_id}`} >
+        
+      <button className=" w-full cursor-pointer uppercase bg-green-300 font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black" > 
+      RECOMEND{/* recomended */}
+            </button>
+      </Link>
+          
     </div>
   </div>
- 
-    </div>
+  
   )
 }
 

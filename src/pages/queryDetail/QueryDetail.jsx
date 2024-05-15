@@ -84,7 +84,7 @@ toast.success("Add A Recomendation")
   return (
     <div>
     <div className='py-16'>
-    <div className="max-w-lg p-4 shadow-md bg-gradient-to-r from-teal-600 to-teal-300 text-white p-5 mx-auto rounded-lg">
+    <div className="max-w-lg p-4 shadow-md bg-gradient-to-r from-blue-600 to-violet-600 text-white p-5 mx-auto rounded-lg">
     <UseTitle heading="VIEW DETAILS OF QUERY PRODUXCT"></UseTitle>
 	<div className="flex justify-between pb-4 border-bottom">
 		<div className="flex items-center">

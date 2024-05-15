@@ -18,7 +18,7 @@ setRecoForMe(data)
 
 
 
-
+//console.log(recoForme)
   return (
     <div className='bg text-white'>
 
@@ -201,7 +201,7 @@ setRecoForMe(data)
              <br/>
              <span className=" badge-sm">{specifiqUser.curren_Email}</span>
            </td>
-           <td>{specifiqUser.R_title}</td>
+           <td>{specifiqUser.current_Time}</td>
 
            
            <td>{specifiqUser.R_reason}</td>
