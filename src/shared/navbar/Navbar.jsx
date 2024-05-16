@@ -30,9 +30,9 @@ const Navbar = () => {
   const handleTheme = (e) => {
     /* condition */
     if (e.target.checked) {
-      setTheme("light");
+      setTheme("synthwave");
     } else {
-      setTheme("retro");
+      setTheme("light");
     }
   };
 

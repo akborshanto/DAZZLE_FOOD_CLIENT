@@ -265,12 +265,7 @@ toast.success("Add A Recomendation")
                             </button>
                           </form>
                         </section>
-    {/* all reqomendationd */}
-    <button class=" w-full cursor-pointer uppercase bg-green-400 font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black">
-    ALL RECOMENDATION
-    </button>
-    
-    
+
                         
                         <div className="modal-action">
                           <form method="dialog">

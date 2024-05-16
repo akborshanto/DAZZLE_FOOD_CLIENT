@@ -11,10 +11,10 @@ const ExtraSection1 = () => {
 			<img src="https://img.freepik.com/free-photo/wooden-spoons-with-plants-top-view_23-2149339713.jpg?t=st=1715658464~exp=1715662064~hmac=4e9b9d5916808b36a9a6f0eecdfdb9d3867fc14eb115c4ee2db1fff5110473c0&w=900" className='w-[300px] lg:w-[500px]' />
 		</div>
 		<div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-			<h1 className="text-5xl font-bold leading-none sm:text-6xl p-5">ABOUT ALTERNATIVE PRODUCT
+			<h1 className=" text-2xl lg:text-5xl font-bold leading-none sm:text-6xl p-5">ALTERNATIVE PART DEFINITION
 		</h1>
 
-    Alternative products are interchangeable, very similar, or comparable products that can be substituted during a sale or during production if the original product is out of stock.
+		An alternative part is a replacement or substitute for a specific part or piece of machinery. Alternative parts are typically used when the original part is unavailable or has been discontinued. They can also offer better functionality at a lower price. Alternative parts may serve as a temporary fix while waiting for the original part to arrive or as a long-term fix.
 		
 
 		</div>
