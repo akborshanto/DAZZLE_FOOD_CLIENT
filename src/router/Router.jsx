@@ -87,7 +87,8 @@ loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/QueryDetail/${params.i
   path:'/allquery',
   element:<Query></Query>,
   loader:()=>fetch(`${import.meta.env.VITE_API_URL}/pagination`)
-}
+},
+
 
 
 

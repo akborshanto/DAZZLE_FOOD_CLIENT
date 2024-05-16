@@ -59,16 +59,30 @@ console.log(sort.length  < 0 ? "akboar":"shanto")
   };
 
   return (
-    <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6 justify-items-center">
+    <div  className="my-12">
 {
 
 
 
+sort.length === 0 ?
+
+<div className=" mx-auto text-center  my-8">
+
+<h1 className=" text-xl lg:text-3xl font-bold text-red-400">QUERY NO FOUND </h1>
+<h2>IF You  Want  You Will  add a  QUERY </h2>
+<Link to="/addQuery">
+<button class="cursor-pointer uppercase bg-green-400 font-bold my-6 px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition  text-black">
+ADD QUARIES        </button>
+</Link>
+</div>
 
 
 
+:
+
+<div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6 justify-items-center">
+{
   
-
   sort.map((myQueryInfo) => (
     <QueryCard
       myQueryInfo={myQueryInfo}
@@ -77,11 +91,23 @@ console.log(sort.length  < 0 ? "akboar":"shanto")
     ></QueryCard>
   ))
 
+
 }
-    (
+
+</div>
+
+
+  
+
+}
+    
        
 
     </div>
+
+
+
+
   );
 };
 

@@ -65,7 +65,10 @@ const Navbar = () => {
           Quaries
         </NavLink>
       </li> */}
+  
      <li>
+
+
         <NavLink
           to="/allquery"
           className={({ isActive }) =>
