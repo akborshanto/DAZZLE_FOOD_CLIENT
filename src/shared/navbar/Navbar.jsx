@@ -21,11 +21,11 @@ const Navbar = () => {
 
   /* theme add  and save the localStorage */
 
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-    const localTheme = localStorage.getItem("theme");
-    document.querySelector("html").setAttribute("data-theme", localTheme);
-  }, [theme]);
+  // useEffect(() => {
+  //   localStorage.setItem("theme", theme);
+  //   const localTheme = localStorage.getItem("theme");
+  //   document.querySelector("html").setAttribute("data-theme ", localTheme);
+  // }, [theme]);
 
   const handleTheme = (e) => {
     /* condition */
