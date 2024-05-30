@@ -26,7 +26,9 @@ const Home = () => {
   { /* add to extra section this section will be attractive and striking aswell as winsome */}
   <ExtraSection1></ExtraSection1>
   <ExtraSection2></ExtraSection2>
-  <DateRange></DateRange>
+<div className='my-8 text-center bg-slate-200  p-8'>
+<DateRange></DateRange>
+</div>
     </div>
   )
 }
