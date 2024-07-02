@@ -42,7 +42,7 @@ Before you begin, ensure you have met the following requirements:
 - 
 ## Step to Install the project
 # 1.CLone the repository
-- git clone https://github.com/akborshanto/BOOK_STUDY.git
+- git clone https://github.com/akborshanto/DAZZLE_FOOD_CLIENT.git
  # 2.Navigate to the project directory
 - cd projectName
  # 3.Install Dependencies
