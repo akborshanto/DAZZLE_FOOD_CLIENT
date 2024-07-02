@@ -39,5 +39,15 @@ Before you begin, ensure you have met the following requirements:
 ## ----------------FIREBASE  LIVE LINK -----------------------------------##
 - [LIVE LINK ](https://dazzle-food.web.app/)
 - [VERCEL SERVER ](https://querypdgateway.vercel.app)
+- 
+## Step to Install the project
+# 1.CLone the repository
+- git clone https://github.com/akborshanto/BOOK_STUDY.git
+ # 2.Navigate to the project directory
+- cd projectName
+ # 3.Install Dependencies
+- npm install
+ #  4.Start the Development Server
+- NPM START
 
 
